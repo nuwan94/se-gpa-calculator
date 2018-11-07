@@ -1,0 +1,79 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    cursor: default;
+}
+
+::selection {
+    background: #333;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #333;
+    color: #fff;
+}
+
+.nav-wrapper {
+    padding: .5em;
+
+}
+
+.subjectTab {
+    margin-top: 2em;
+    /* font-size: 1.5em; */
+}
+
+.subjectTab .row {
+    padding: .5em;
+    margin: 0;
+    /* line-height: 3em; */
+    border: 1px solid #eee;
+}
+
+.subjectTab .row:nth-child(even) {
+    background: #eee;
+}
+
+.subjectTab h5,
+.subjectTab h6 {
+    margin: 0;
+    padding: .5em;
+    background: #263238;
+    color: #fff;
+}
+
+select {
+    text-align: center;
+}
+
+.tab {
+    background: #3f51b5;
+}
+
+.tab a {
+    color: #fff !important;
+}
+
+.indicator {
+    background-color: #fff !important;
+}
+
+.subjectTab .tabContent {
+    padding: 2em;
+}
+
+footer {
+    padding: 1em;
+    color: #fff;
+}
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}

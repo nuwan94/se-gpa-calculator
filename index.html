@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SE - GPA Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+</head>
+
+<body ng-controller="gpaCtrl">
+    <main>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper  blue-grey darken-4">
+                    <img class="brand-logo left" style="height: 80%;" src="favicon.png"/>
+                    <a href="#" class="brand-logo center">GPA : {{cgpa | number : 2}}</a>
+                    <button class="right btn waves-effect waves-light indigo" ng-click="reset()">RESET</button>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container">
+
+            <div class="row subjectTab">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a class="active" href="#test1">Year 1</a></li>
+                        <li class="tab col s3"><a href="#test2">Year 2</a></li>
+                        <li class="tab col s3"><a href="#test3">Year 3</a></li>
+                        <li class="tab col s3"><a href="#test4">Year 4</a></li>
+                    </ul>
+                </div>
+                <div id="test1" class="tabContent col s12">
+                    <div class="col s6" ng-repeat="s in subjects">
+                        <h6 class="center">Semester : {{s.sem}}</h6>
+
+                        <div class="row" ng-repeat="x in s.subs">
+                            <div class="col s2">{{x.id}}</div>
+                            <div class="col s6">{{x.name}}</div>
+                            <div class="col s4">
+                                <!-- browser-default -->
+                                <select class="" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
+                                </select>
+                            </div>
+                        </div>
+
+                        <h6 ng-if="s.semgpa" class="center">Semester GPA : {{s.semgpa | number : 2}}</h6>
+                    </div>
+                </div>
+
+                <div id="test2" class="tabContent col s12">Added Soon</div>
+                <div id="test3" class="tabContent col s12">Added Soon</div>
+                <div id="test4" class="tabContent col s12">Added Soon</div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer class=" blue-grey darken-4">
+        <div class="footer-copyright">
+            <div class="container">
+                Nuwan94 © 2018
+                <a class="grey-text text-lighten-4 right" href="#!">❤ Github</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
