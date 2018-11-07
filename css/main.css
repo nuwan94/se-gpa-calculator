@@ -1,4 +1,4 @@
-* {
+body {
     font-family: 'Roboto', sans-serif;
     cursor: default;
 }
@@ -15,7 +15,14 @@
 
 .nav-wrapper {
     padding: .5em;
+}
 
+.logo{
+    height: 80%;margin-top: 0em;
+}
+
+.GPA{
+    margin-top: -0.25em;
 }
 
 .subjectTab {

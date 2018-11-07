@@ -18,8 +18,8 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper  blue-grey darken-4">
-                    <img class="brand-logo left" style="height: 80%;" src="favicon.png"/>
-                    <a href="#" class="brand-logo center">GPA : {{cgpa | number : 2}}</a>
+                    <img class="brand-logo logo left" src="favicon.png"/>
+                    <div href="#" class="brand-logo GPA center">GPA : {{cgpa | number : 2}}</div>
                     <button class="right btn waves-effect waves-light indigo" ng-click="reset()">RESET</button>
                 </div>
             </nav>
@@ -37,13 +37,13 @@
                     </ul>
                 </div>
                 <div id="test1" class="tabContent col s12">
-                    <div class="col s6" ng-repeat="s in subjects">
+                    <div class="col s12 m6" ng-repeat="s in subjects">
                         <h6 class="center">Semester : {{s.sem}}</h6>
 
                         <div class="row" ng-repeat="x in s.subs">
-                            <div class="col s2">{{x.id}}</div>
-                            <div class="col s6">{{x.name}}</div>
-                            <div class="col s4">
+                            <div class="col s4 m3">{{x.id}}</div>
+                            <div class="col s8 m7">{{x.name}}</div>
+                            <div class="col s12 m2">
                                 <!-- browser-default -->
                                 <select class="" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
