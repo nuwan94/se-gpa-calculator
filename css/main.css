@@ -69,6 +69,10 @@ select {
     padding: 2em;
 }
 
+.semContent {
+    margin-bottom: 1em;
+}
+
 footer {
     padding: 1em;
     color: #fff;

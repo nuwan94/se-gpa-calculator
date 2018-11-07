@@ -38,7 +38,7 @@ app.controller('gpaCtrl', function ($scope) {
                     cd: 2,
                 }, {
                     name: 'ENGLISH FOR PROFESSIONALS',
-                    id: 'PMAT 11212',
+                    id: 'DELT 11212',
                     cd: 2,
                 }]
             },
@@ -66,7 +66,7 @@ app.controller('gpaCtrl', function ($scope) {
                     cd: 2,
                 }, {
                     name: 'COMMUNICATION SKILLS FOR PROFESSIONALS',
-                    id: 'SENG 12312',
+                    id: 'DELT 12312',
                     cd: 2,
                 }]
             }
