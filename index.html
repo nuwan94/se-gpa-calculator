@@ -36,27 +36,22 @@
                         <li class="tab col s3"><a href="#test4">Year 4</a></li>
                     </ul>
                 </div>
-                <div id="test1" class="tabContent col s12">
-                    <div class="col s12 m6 semContent" ng-repeat="s in subjects">
+                <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
+                    <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
                         <h6 class="center">Semester : {{s.sem}}</h6>
-
                         <div class="row" ng-repeat="x in s.subs">
                             <div class="col s4 m3">{{x.id}}</div>
-                            <div class="col s8 m7">{{x.name}}</div>
+                            <div class="col s8 m7">{{x.name | uppercase }}</div>
                             <div class="col s12 m2">
                                 <!-- browser-default -->
                                 <select class="" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
                         </div>
-
-                        <h6 ng-if="s.semgpa" class="center">Semester GPA : {{s.semgpa | number : 2}}</h6>
+                        <h6 ng-if="s.semgpa" class="center">Semester {{s.sem}} GPA : {{s.semgpa | number : 2}}</h6>
                     </div>
                 </div>
 
-                <div id="test2" class="tabContent col s12">Added Soon</div>
-                <div id="test3" class="tabContent col s12">Added Soon</div>
-                <div id="test4" class="tabContent col s12">Added Soon</div>
             </div>
         </div>
 
