@@ -140,6 +140,43 @@ app.controller('gpaCtrl', function ($scope) {
                         cd: 3,
                     }]
                 }]
+            },
+            {
+                year:'3', 
+                sems: [{
+                    sem: '5',
+                    subs: [{
+                        name: 'Add Soon',
+                        id: '',
+                        cd: 0,
+                    }]
+                },
+                {
+                    sem: '6',
+                    subs: [{
+                        name: 'Add Soon',
+                        id: '',
+                        cd: 0,
+                    }]
+                }]
+            },{
+                year:'4', 
+                sems: [{
+                    sem: '7',
+                    subs: [{
+                        name: 'Add Soon',
+                        id: '',
+                        cd: 0,
+                    }]
+                },
+                {
+                    sem: '8',
+                    subs: [{
+                        name: 'Add Soon',
+                        id: '',
+                        cd: 0,
+                    }]
+                }]
             }
         ];
     } else {
@@ -148,7 +185,7 @@ app.controller('gpaCtrl', function ($scope) {
     }
 
     $scope.grades = [
-        {name: 'A+' , val: 4.0},
+        {name: 'A+' , val: 4.000000000000001},
         {name: 'A'  , val: 4.0},
         {name: 'A-' , val: 3.7}, 
         {name: 'B+' , val: 3.3}, 
