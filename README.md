@@ -8,7 +8,6 @@ Website : http://gpa.nuwan.pw
 ### To-do
 - [x] Show cumulative GPA
 - [x] Show semeseter vise GPA
-- [x] Format structure for two sems
-- [ ] Format structure for 4 years
-- [ ] Ability to edit subjects and credits
+- [ ] Add all the course codes
+- [ ] Ability to add/edit subjects and credits
 - [ ] Firebase integration
