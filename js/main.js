@@ -102,6 +102,7 @@ app.controller('gpaCtrl', function ($scope) {
                         name: 'Interactive Application Development',
                         id: 'SENG 21263',
                         cd: 3,
+                        opt : '1'
                     }, {
                         name: 'Management for Software Engineering II',
                         id: 'SENG 21272',
@@ -134,10 +135,12 @@ app.controller('gpaCtrl', function ($scope) {
                         name: 'Embedded Systems Development',
                         id: 'SENG 22253',
                         cd: 3,
+                        opt : '1'
                     }, {
                         name: 'Mathematical Methods',
                         id: 'PMAT 22213',
                         cd: 3,
+                        opt : '1'
                     }]
                 }]
             },

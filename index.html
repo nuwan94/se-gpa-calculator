@@ -45,17 +45,16 @@
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="center">Semester : {{s.sem}}</h6>
+                        <h6 class="">GPA : {{s.semgpa | number : 2}} <span class="badge indigo white-text" > {{s.sem}}<sup>{{ s.sem > 3 ? 'th' : (s.sem == 3 ? 'rd' : (s.sem == 2 ? 'nd' : (s.sem == 1 ? 'st' : '')) )}}</sup> </span></h6>
                         <div class="row" ng-repeat="x in s.subs">
-                            <div class="col s4 m3">{{x.id}}</div>
-                            <div class="col s8 m7">{{x.name | uppercase }}</div>
+                            <div class="col s4 m3">{{x.id}}<sup>{{ ( x.opt == '1' ) ? 'o' : '' }}</sup></div>
+                            <div class="col s8 m7">{{x.name | uppercase }} </div>
                             <div class="col s12 m2">
                                 <!-- browser-default -->
-                                <select class="" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
+                                <select class="browser-default" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
                         </div>
-                        <h6 ng-if="s.semgpa" class="center">Semester {{s.sem}} GPA : {{s.semgpa | number : 2}}</h6>
                     </div>
                 </div>
 

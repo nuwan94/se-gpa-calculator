@@ -33,7 +33,6 @@ body {
 .subjectTab .row {
     padding: .5em;
     margin: 0;
-    /* line-height: 3em; */
     border: 1px solid #eee;
 }
 
@@ -50,7 +49,7 @@ body {
 }
 
 select {
-    text-align: center;
+    height: 2rem;
 }
 
 .tab {
