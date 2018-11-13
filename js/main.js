@@ -229,6 +229,7 @@ app.controller('gpaCtrl', function ($scope) {
                         tcd += sub.cd;
                     }
                 }
+                sem.tCd = tsemCD;
                 sem.semgpa = tsemGPA / tsemCD;
             }
             
