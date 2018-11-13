@@ -14,11 +14,18 @@
 </head>
 
 <body ng-controller="gpaCtrl">
+    <div class="loader blue-grey darken-4">
+        <div class="progress blue-grey darken-4">
+            <div class="indeterminate indigo"></div>
+        </div>
+    </div>
+
+
     <main>
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper  blue-grey darken-4">
-                    <img class="brand-logo logo left" src="favicon.png"/>
+                    <img class="brand-logo logo left" src="favicon.png" />
                     <div href="#" class="brand-logo GPA center">GPA : {{cgpa | number : 2}}</div>
                     <button class="right btn waves-effect waves-light indigo" ng-click="reset()">RESET</button>
                 </div>
@@ -62,7 +69,8 @@
         <div class="footer-copyright">
             <div class="container">
                 Nuwan94 © 2018
-                <a class="grey-text text-lighten-4 right" href="https://github.com/Nuwan94/SE-GPA-Calculator">❤ Github</a>
+                <a class="grey-text text-lighten-4 right" href="https://github.com/Nuwan94/SE-GPA-Calculator">❤
+                    Github</a>
             </div>
         </div>
     </footer>

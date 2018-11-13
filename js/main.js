@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('.tabs').tabs();
     $('select').formSelect();
-
+    $('.loader').delay(1000).fadeOut();
 });
 
 var app = angular.module('app', []);
