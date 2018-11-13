@@ -102,3 +102,11 @@ main {
     left:50%;
 }
 
+@media screen and (max-width: 700px) {
+    .container{
+        width: 100%;
+    }
+    .row .col {
+        padding: 0.1em .5em;
+    }
+}
