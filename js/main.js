@@ -208,6 +208,7 @@ app.controller('gpaCtrl', function ($scope) {
     }
 
     $scope.updateGPA = function updateGPA() {
+        M.toast({html: 'Saving...',displayLength:500, classes: 'indigo'})
         var tgpa = 0;
         var tcd = 0;
         for (i = 0; i < $scope.subjects.length; i++) {
