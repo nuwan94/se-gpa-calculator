@@ -19,7 +19,7 @@
 
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 </head>
@@ -87,22 +87,23 @@
         </div>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/upup.min.js"></script>
     <script>
         UpUp.start({
-          'content-url': 'schedule.html?user=joe', // show this when the user is offline
-          'assets': [                 // define additional assets needed while offline:
+          'content-url': 'index.html',
+          'assets': [
             'css/main.css',
+            'css/materialize.min.css',
+            'js/jquery-3.3.1.min.js',
+            'js/materialize.min.js',
             'js/angular.min.js',
-            'js/main.js'
+            'js/main.js',
+            'js/upup.min.js'
           ]
         });
       </script>
