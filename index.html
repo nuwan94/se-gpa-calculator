@@ -7,6 +7,17 @@
     <title>SE - GPA Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -45,7 +56,9 @@
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="">Credits : {{s.tCd}} | GPA : {{s.semgpa | number : 2}} <span class="badge indigo white-text" > {{s.sem}}<sup>{{ s.sem > 3 ? 'th' : (s.sem == 3 ? 'rd' : (s.sem == 2 ? 'nd' : (s.sem == 1 ? 'st' : '')) )}}</sup> </span></h6>
+                        <h6 class="">Credits : {{s.tCd}} | GPA : {{s.semgpa | number : 2}} <span class="badge indigo white-text">
+                                {{s.sem}}<sup>{{ s.sem > 3 ? 'th' : (s.sem == 3 ? 'rd' : (s.sem == 2 ? 'nd' : (s.sem ==
+                                    1 ? 'st' : '')) )}}</sup> </span></h6>
                         <div class="row" ng-repeat="x in s.subs">
                             <div class="col s4 m3">{{x.id}}<sup>{{ ( x.opt == '1' ) ? 'o' : '' }}</sup></div>
                             <div class="col s8 m7">{{x.name | uppercase }} </div>
