@@ -31,7 +31,7 @@ body {
 }
 
 .subjectTab .row {
-    padding: .5em;
+    padding: 1em;
     margin: 0;
     border: 1px solid #eee;
 }
@@ -43,13 +43,34 @@ body {
 .subjectTab h5,
 .subjectTab h6 {
     margin: 0;
-    padding: .5em;
+    padding: .75em;
     background: #263238;
     color: #fff;
 }
 
 select {
-    height: 2rem;
+    height: 3rem;
+    text-align:center;
+}
+
+select.Green {
+    background: #CCFF90;
+}
+
+select.Blue {
+    background: #80D8FF;
+}
+
+select.Orange {
+    background: #FFE57F;
+}
+
+select.Grey {
+    background: #ddd;
+}
+
+.row .col.tab {
+    background: #fff;
 }
 
 .tab {
@@ -57,11 +78,17 @@ select {
 }
 
 .tab a {
-    color: #fff !important;
+    color: #333 !important;
+}
+
+.tab a.active {
+    background-color: #333 !important;
+    color: #fff!important;
 }
 
 .indicator {
-    background-color: #fff !important;
+    display: none;
+    background-color: #333 !important;
 }
 
 .subjectTab .tabContent {
@@ -70,6 +97,12 @@ select {
 
 .semContent {
     margin-bottom: 1em;
+    
+}
+
+.semContent .badge{
+    margin-left: 0;
+    font-size: .25em;
 }
 
 footer {
