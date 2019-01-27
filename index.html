@@ -43,10 +43,13 @@
             <div class="row subjectTab">
                 <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#test1">Year 1</a></li>
-                        <li class="tab col s3"><a href="#test2">Year 2</a></li>
+                        <li class="tab col s3" ng-repeat="z in subjects">
+                            <a class="active" href="#test{{z.year}}" >Year {{z.year}} <span class="badge blue white-text">{{z.ygpa?z.ygpa:0 | number:2}}</span></a>
+                            
+                        </li>
+                        <!-- <li class="tab col s3"><a href="#test2">Year 2</a></li>
                         <li class="tab col s3"><a href="#test3">Year 3</a></li>
-                        <li class="tab col s3"><a href="#test4">Year 4</a></li>
+                        <li class="tab col s3"><a href="#test4">Year 4</a></li> -->
                     </ul>
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
@@ -65,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>
