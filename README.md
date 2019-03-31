@@ -2,7 +2,7 @@
 
 Simple GPA Calculator with pre-entered subject list for SE 2015/16 Batch.
 
-Website : http://gpa.nuwan.pw
+Website : https://nuwan.dev/SE-GPA-Calculator/
 
 -----
 ### To-do
