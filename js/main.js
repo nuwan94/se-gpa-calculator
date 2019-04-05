@@ -156,7 +156,7 @@ app.controller('gpaCtrl', function ($scope) {
                     subs: [{
                         name: 'Software Architecture and Design',
                         id: 'SENG 22212',
-                        cd: 3,
+                        cd: 2,
                     }, {
                         name: 'Human Computer Interaction',
                         id: 'SENG 22223',
