@@ -61,13 +61,14 @@
                                 {{s.sem}}</span> -->
                         </h6>
                         <div class="row" ng-repeat="x in s.subs">
-                            <div class="col s4 m3">{{x.id.substr(0,9)}}<b>{{x.id.substr(-1)}}</b> <br><span
-                                    ng-if="x.type" class="badge indigo left white-text">{{ x.type | getType }}</span>
+                            <div class="col s4 m3">
+                                {{x.id.substr(0,9)}}<b>{{x.id.substr(-1)}}</b><br>
+                                <span ng-if="x.type" ng-class="x.type" class="badge left white-text">{{ x.type | getType }}</span>
                             </div>
-                            <div class="col s8 m6">{{x.name | uppercase }} </div>
+                            <div class="col s8 m6 subName">{{x.name | lowercase }} </div>
                             <div class="col s12 m3">
                                 <!-- browser-default -->
-                                <select class="browser-default" ng-class="x.grade | getClass" ng-model="x.grade"
+                                <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade"
                                     ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
@@ -104,12 +105,12 @@
                             <td>Repeat</td>
                             <td>{{RepeatCount}}</td>
                         </tr>
-                        <tr class="green" ng-if="RepeatCount == 0">
+                        <!-- <tr class="green" ng-if="RepeatCount == 0">
                             <td colspan="2">Eligible</td>
                         </tr>
                         <tr class="red" ng-if="cgpa < 2.0">
                             <td colspan="2">Not Eligible</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>

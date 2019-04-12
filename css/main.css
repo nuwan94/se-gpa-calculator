@@ -48,47 +48,35 @@ body {
     color: #fff;
 }
 
+.subName {text-transform: capitalize;}
+
 select {
     height: 3rem;
     text-align:center;
 }
 
-select.Green {
-    background: #b2ff59 ;
-}
+.row .col.tab {background: #fff;}
 
-select.Blue {
-    background: #42a5f5 ;
-}
+.semContent .o{background: #333;}
+.semContent .n{background: #3f51b5;}
+.semContent .m{background: #4caf50;}
+.semContent .d{background: #e57373;}
+.semContent .g{background: #4a148c;}
+.semContent .h{background: #ffab00;}
+.semContent .b{background: #00796b;}
 
-select.Orange {
-    background: #FFE57F;
-}
+.tab {background: #3f51b5;}
 
-select.Grey {
-    background: #ddd;
-}
-
-.row .col.tab {
-    background: #fff;
-}
-
-.tab {
-    background: #3f51b5;
-}
-
-.tab a {
-    color: #333 !important;
-}
+.tab a {color: #333 !important;}
 
 .tab a.active {
-    background-color: #333 !important;
+    background-color: #263238 !important;
     color: #fff!important;
 }
 
 .indicator {
     display: none;
-    background-color: #333 !important;
+    background-color: #263238 !important;
 }
 
 .subjectTab .tabContent {

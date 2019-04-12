@@ -27,7 +27,7 @@ app.filter('getType', function () {
     }
 })
 
-app.filter('getClass', function () {
+app.filter('getGradeClass', function () {
     return function (x) {
         var className = "";
         if (x > 4) {
@@ -167,33 +167,37 @@ app.controller('gpaCtrl', function ($scope) {
                 id: "SENG 31212",
                 name: "Software Quality"
             }, {
-                id: "SENG 31232",
+                id: "SENG 31222",
                 name: "Information Security"
             }, {
-                id: "SENG 31212",
+                id: "SENG 31232",
                 name: "Software Project Management"
+            }, {
+                id: "SENG 31242",
+                name: "System Design Project"
             }, {
                 id: "SENG 31252",
                 name: "Professional Practices"
             }, {
                 id: "SENG 31262",
                 name: "Research Methods"
-            }, {
-                id: "SENG 31272",
-                name: "Internet of Things",
-                type: 'o'
-            }, {
-                id: "SENG 31282",
-                name: "Computer Network Management",
-                type: 'o'
-            }, {
-                id: "SENG 31292",
-                name: "Enterprise Information Systems",
-                type: 'o'
-            }, {
-                id: "SENG 34213",
-                name: "Systems Development Project"
-            }, {
+            }, 
+            
+            // Not Available for 2015/16
+            // {
+            //     id: "SENG 31272",
+            //     name: "Internet of Things",
+            //     type: 'o'
+            // }, {
+            //     id: "SENG 31282",
+            //     name: "Computer Network Management",
+            //     type: 'o'
+            // }, {
+            //     id: "SENG 31292",
+            //     name: "Enterprise Information Systems",
+            //     type: 'o'
+            // }, 
+            {
                 id: "SENG 34222",
                 name: "Software Process"
             }, {
@@ -225,6 +229,9 @@ app.controller('gpaCtrl', function ($scope) {
         {
             sem: '6',
             subs: [{
+                id: "SENG 34213",
+                name: "Systems Development Project"
+            },{
                 id: "SENG 32216",
                 name: "Internship"
             }]
@@ -292,6 +299,9 @@ app.controller('gpaCtrl', function ($scope) {
                 name: 'Software Safety and Reliability',
                 id: 'SENG 42212'
             }, {
+                name: 'Software Engineering Research Project',
+                id: 'SENG 43216'
+            }, {
                 name: 'Usability Engineering',
                 id: 'SENG 42222',
                 type: 'o'
@@ -307,9 +317,6 @@ app.controller('gpaCtrl', function ($scope) {
                 name: 'Computer Graphics',
                 id: 'SENG 42252',
                 type: 'o'
-            }, {
-                name: 'Software Engineering Research Project',
-                id: 'SENG 43216'
             }, {
                 id: "SENG 42273",
                 name: "Semantic Web and Ontological Engineering",
