@@ -27,18 +27,21 @@ app.filter('getType', function () {
     }
 })
 
-
 app.filter('getClass', function () {
     return function (x) {
         var className = "";
-        if (x >= 4) {
-            className = "Green";
+        if (x > 4) {
+            className = "light-green accent-3";
+        }else if (x==4){
+            className = "light-green accent-2";
         } else if (x >= 3) {
-            className = "Blue";
+            className = "cyan accent-3";
         } else if (x >= 2) {
-            className = "Orange";
-        } else {
-            className = "Grey";
+            className = "amber lighten-2";
+        } else if (x >= 0.3){
+            className = "lime lighten-4";
+        }else{
+            className = ""
         }
         return className;
     };
@@ -51,359 +54,290 @@ app.controller('gpaCtrl', function ($scope) {
     $scope.savedSubjects = localStorage.getItem('subjects');
     $scope.savedGPA = localStorage.getItem('cgpa');
 
-    $scope.subjects = [
-        {
-            year: '1',
-            sems: [{
-                    sem: '1',
-                    subs: [{
-                        name: 'FUNDAMENTALS OF COMPUTING',
-                        id: 'SENG 11213',
-                        cd: 3,
-                    }, {
-                        name: 'PROGRAMMING CONCEPTS',
-                        id: 'SENG 11223',
-                        cd: 3,
-                    }, {
-                        name: 'ENGINEERING FOUNDATION',
-                        id: 'SENG 11232',
-                        cd: 2,
-                    }, {
-                        name: 'STATISTICS',
-                        id: 'SENG 11243',
-                        cd: 3,
-                    }, {
-                        name: 'DISCREET MATHEMATICS FOR COMPUTING I A',
-                        id: 'PMAT 11212',
-                        cd: 2,
-                    }, {
-                        name: 'ENGLISH FOR PROFESSIONALS',
-                        id: 'DELT 11212',
-                        cd: 2,
-                    }]
-                },
-                {
-                    sem: '2',
-                    subs: [{
-                        name: 'DATA STRUCTURES AND ALGORITHMS',
-                        id: 'SENG 12213',
-                        cd: 3,
-                    }, {
-                        name: 'DATABASE DESIGN AND DEVELOPMENT',
-                        id: 'SENG 12223',
-                        cd: 3,
-                    }, {
-                        name: 'OBJECT ORIENTED PROGRAMMING',
-                        id: 'SENG 12233',
-                        cd: 3,
-                    }, {
-                        name: 'MANAGEMENT FOR SOFTWARE ENGINEERING I',
-                        id: 'SENG 12242',
-                        cd: 2,
-                    }, {
-                        name: 'DISCREET MATHEMATICS FOR COMPUTING II B',
-                        id: 'PMAT 12212',
-                        cd: 2,
-                    }, {
-                        name: 'COMMUNICATION SKILLS FOR PROFESSIONALS',
-                        id: 'DELT 12312',
-                        cd: 2,
-                    }]
-                }
-            ]
+    $scope.subjects = [{
+        year: '1',
+        sems: [{
+            sem: '1',
+            subs: [{
+                name: 'FUNDAMENTALS OF COMPUTING',
+                id: 'SENG 11213'
+            }, {
+                name: 'PROGRAMMING CONCEPTS',
+                id: 'SENG 11223'
+            }, {
+                name: 'ENGINEERING FOUNDATION',
+                id: 'SENG 11232'
+            }, {
+                name: 'STATISTICS',
+                id: 'SENG 11243'
+            }, {
+                name: 'DISCREET MATHEMATICS FOR COMPUTING I A',
+                id: 'PMAT 11212'
+            }, {
+                name: 'ENGLISH FOR PROFESSIONALS',
+                id: 'DELT 11212'
+            }]
         },
         {
-            year: '2',
-            sems: [{
-                    sem: '3',
-                    subs: [{
-                        name: 'COMPUTER ARCHITECTURE AND OPERATING SYSTEMS',
-                        id: 'SENG 21213',
-                        cd: 3,
-                    }, {
-                        name: 'SOFTWARE CONSTRUCTIONS',
-                        id: 'SENG 21222',
-                        cd: 2,
-                    }, {
-                        name: 'Requirement Engineering',
-                        id: 'SENG 21233',
-                        cd: 3,
-                    }, {
-                        name: 'Software Modelling',
-                        id: 'SENG 21243',
-                        cd: 3,
-                    }, {
-                        name: 'Web Application Development',
-                        id: 'SENG 21253',
-                        cd: 3,
-                    }, {
-                        name: 'Interactive Application Development',
-                        id: 'SENG 21263',
-                        cd: 3,
-                        type: 'o'
-                    }, {
-                        name: 'Management for Software Engineering II',
-                        id: 'SENG 21272',
-                        cd: 2,
-                    }, {
-                        name: 'Computer Netwokrs',
-                        id: 'SENG 24213',
-                        cd: 3,
-                    }]
-                },
-                {
-                    sem: '4',
-                    subs: [{
-                        name: 'Software Architecture and Design',
-                        id: 'SENG 22212',
-                        cd: 2,
-                    }, {
-                        name: 'Human Computer Interaction',
-                        id: 'SENG 22223',
-                        cd: 3,
-                    }, {
-                        name: 'Software Verification and Validation',
-                        id: 'SENG 22233',
-                        cd: 3,
-                    }, {
-                        name: 'Mobile Application Development',
-                        id: 'SENG 22243',
-                        cd: 3,
-                    }, {
-                        name: 'Embedded Systems Development',
-                        id: 'SENG 22253',
-                        cd: 3,
-                        type: 'o'
-                    }, {
-                        name: 'Mathematical Methods',
-                        id: 'PMAT 22213',
-                        cd: 3,
-                        type: 'o'
-                    }]
-                }
-            ]
-        },
-        {
-            year: '3',
-            sems: [{
-                    sem: '5',
-                    subs: [{
-                        id: "SENG 31212",
-                        name: "Software Quality",
-                        cd: 2
-                    }, {
-                        id: "SENG 31232",
-                        name: "Information Security",
-                        cd: 2
-                    }, {
-                        id: "SENG 31212",
-                        name: "Software Project Management",
-                        cd: 2
-                    }, {
-                        id: "SENG 31252",
-                        name: "Professional Practices",
-                        cd: 2
-                    }, {
-                        id: "SENG 31262",
-                        name: "Research Methods",
-                        cd: 2
-                    }, {
-                        id: "SENG 31272",
-                        name: "Internet of Things",
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        id: "SENG 31282",
-                        name: "Computer Network Management",
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        id: "SENG 31292",
-                        name: "Enterprise Information Systems",
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        id: "SENG 34213",
-                        name: "Systems Development Project",
-                        cd: 3
-                    }, {
-                        id: "SENG 34222",
-                        name: "Software Process",
-                        cd: 2
-                    }, {
-                        id: "SENG 31313",
-                        name: "Advanced Web Applications Development",
-                        cd: 3,
-                        type: 'n'
-                    }, {
-                        id: "SENG 31323",
-                        name: "Mobile Computing Technologies",
-                        cd: 3,
-                        type: 'm'
-                    }, {
-                        id: "SENG 31333",
-                        name: "Business Intelligence and Management Support Systems",
-                        cd: 3,
-                        type: 'd'
-                    }, {
-                        id: "SENG 31343",
-                        name: "Health Information Management",
-                        cd: 3,
-                        type: 'h'
-                    }, {
-                        id: "SENG 31353",
-                        name: "Game Development Technology",
-                        cd: 3,
-                        type: 'g'
-                    }, {
-                        id: "SENG 31363",
-                        name: "Business Systems Modelling and Optimization",
-                        cd: 3,
-                        type: 'b'
-                    }]
-                },
-                {
-                    sem: '6',
-                    subs: [{
-                        id: "SENG 32216",
-                        name: "Internship",
-                        cd: 6
-                    }]
-                }
-            ]
-        }, {
-            year: '4',
-            sems: [{
-                    sem: '7',
-                    subs: [{
-                        name: 'Software Evolution',
-                        id: 'SENG 41212',
-                        cd: 2,
-                    }, {
-                        name: 'Software Metrics and Measurements',
-                        id: 'SENG 41222',
-                        cd: 2,
-                    }, {
-                        name: 'Digital Image Processing',
-                        id: 'SENG 41233',
-                        cd: 3,
-                        type: 'o'
-                    }, {
-                        name: 'Advanced Databases',
-                        id: 'SENG 41242',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Advanced Computer Networks',
-                        id: 'SENG 41252',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Speech Interfaces',
-                        id: 'SENG 41262',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Formal Methods',
-                        id: 'SENG 41272',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        id: "SENG 41283",
-                        name: "Distributed and Cloud Computing",
-                        cd: 3,
-                        type: 'n'
-                    }, {
-                        id: "SENG 41293",
-                        name: "Mobile Web Application Development",
-                        cd: 3,
-                        type: 'm'
-                    }, {
-                        id: "SENG 41303",
-                        name: "Big Data Infrastructure",
-                        cd: 3,
-                        type: 'd'
-                    }, {
-                        id: "SENG 41313",
-                        name: "Health Information Systems Design and Development",
-                        cd: 3,
-                        type: 'h'
-                    }, {
-                        id: "SENG 41323",
-                        name: "Games Design, Artwork, and Programming",
-                        cd: 3,
-                        type: 'g'
-                    }, {
-                        id: "SENG 41333",
-                        name: "Computer Based Operations Management",
-                        cd: 3,
-                        type: 'b'
-                    }]
-                },
-                {
-                    sem: '8',
-                    subs: [{
-                        name: 'Software Safety and Reliability',
-                        id: 'SENG 42212',
-                        cd: 2,
-                    }, {
-                        name: 'Usability Engineering',
-                        id: 'SENG 42222',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Software Management',
-                        id: 'SENG 42232',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Machine Learning',
-                        id: 'SENG 42242',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Computer Graphics',
-                        id: 'SENG 42252',
-                        cd: 2,
-                        type: 'o'
-                    }, {
-                        name: 'Software Engineering Research Project',
-                        id: 'SENG 43216',
-                        cd: 6,
-                    }, {
-                        id: "SENG 42273",
-                        name: "Semantic Web and Ontological Engineering",
-                        cd: 3,
-                        type: 'n'
-                    }, {
-                        id: "SENG 42283",
-                        name: "Mobile Networks",
-                        cd: 3,
-                        type: 'm'
-                    }, {
-                        id: "SENG 42293",
-                        name: "Big Data Analytics",
-                        cd: 3,
-                        type: 'd'
-                    }, {
-                        id: "SENG 42303",
-                        name: "Medical Imaging and Biomedial Signal Processing",
-                        cd: 3,
-                        type: 'h'
-                    }, {
-                        id: "SENG 42313",
-                        name: "Advanced Topics in Game Design and Animation",
-                        cd: 3,
-                        type: 'g'
-                    }, {
-                        id: "SENG 42323",
-                        name: "Business Process Engineering",
-                        cd: 3,
-                        type: 'b'
-                    }]
-                }
-            ]
+            sem: '2',
+            subs: [{
+                name: 'DATA STRUCTURES AND ALGORITHMS',
+                id: 'SENG 12213'
+            }, {
+                name: 'DATABASE DESIGN AND DEVELOPMENT',
+                id: 'SENG 12223'
+            }, {
+                name: 'OBJECT ORIENTED PROGRAMMING',
+                id: 'SENG 12233'
+            }, {
+                name: 'MANAGEMENT FOR SOFTWARE ENGINEERING I',
+                id: 'SENG 12242'
+            }, {
+                name: 'DISCREET MATHEMATICS FOR COMPUTING II B',
+                id: 'PMAT 12212'
+            }, {
+                name: 'COMMUNICATION SKILLS FOR PROFESSIONALS',
+                id: 'DELT 12312'
+            }]
         }
+        ]
+    },
+    {
+        year: '2',
+        sems: [{
+            sem: '3',
+            subs: [{
+                name: 'COMPUTER ARCHITECTURE AND OPERATING SYSTEMS',
+                id: 'SENG 21213'
+            }, {
+                name: 'SOFTWARE CONSTRUCTIONS',
+                id: 'SENG 21222'
+            }, {
+                name: 'Requirement Engineering',
+                id: 'SENG 21233'
+            }, {
+                name: 'Software Modelling',
+                id: 'SENG 21243'
+            }, {
+                name: 'Web Application Development',
+                id: 'SENG 21253'
+            }, {
+                name: 'Interactive Application Development',
+                id: 'SENG 21263',
+                type: 'o'
+            }, {
+                name: 'Management for Software Engineering II',
+                id: 'SENG 21272'
+            }, {
+                name: 'Computer Netwokrs',
+                id: 'SENG 24213'
+            }]
+        },
+        {
+            sem: '4',
+            subs: [{
+                name: 'Software Architecture and Design',
+                id: 'SENG 22212'
+            }, {
+                name: 'Human Computer Interaction',
+                id: 'SENG 22223'
+            }, {
+                name: 'Software Verification and Validation',
+                id: 'SENG 22233'
+            }, {
+                name: 'Mobile Application Development',
+                id: 'SENG 22243'
+            }, {
+                name: 'Embedded Systems Development',
+                id: 'SENG 22253',
+                type: 'o'
+            }, {
+                name: 'Mathematical Methods',
+                id: 'PMAT 22213',
+                type: 'o'
+            }]
+        }
+        ]
+    },
+    {
+        year: '3',
+        sems: [{
+            sem: '5',
+            subs: [{
+                id: "SENG 31212",
+                name: "Software Quality"
+            }, {
+                id: "SENG 31232",
+                name: "Information Security"
+            }, {
+                id: "SENG 31212",
+                name: "Software Project Management"
+            }, {
+                id: "SENG 31252",
+                name: "Professional Practices"
+            }, {
+                id: "SENG 31262",
+                name: "Research Methods"
+            }, {
+                id: "SENG 31272",
+                name: "Internet of Things",
+                type: 'o'
+            }, {
+                id: "SENG 31282",
+                name: "Computer Network Management",
+                type: 'o'
+            }, {
+                id: "SENG 31292",
+                name: "Enterprise Information Systems",
+                type: 'o'
+            }, {
+                id: "SENG 34213",
+                name: "Systems Development Project"
+            }, {
+                id: "SENG 34222",
+                name: "Software Process"
+            }, {
+                id: "SENG 31313",
+                name: "Advanced Web Applications Development",
+                type: 'n'
+            }, {
+                id: "SENG 31323",
+                name: "Mobile Computing Technologies",
+                type: 'm'
+            }, {
+                id: "SENG 31333",
+                name: "Business Intelligence and Management Support Systems",
+                type: 'd'
+            }, {
+                id: "SENG 31343",
+                name: "Health Information Management",
+                type: 'h'
+            }, {
+                id: "SENG 31353",
+                name: "Game Development Technology",
+                type: 'g'
+            }, {
+                id: "SENG 31363",
+                name: "Business Systems Modelling and Optimization",
+                type: 'b'
+            }]
+        },
+        {
+            sem: '6',
+            subs: [{
+                id: "SENG 32216",
+                name: "Internship"
+            }]
+        }
+        ]
+    }, {
+        year: '4',
+        sems: [{
+            sem: '7',
+            subs: [{
+                name: 'Software Evolution',
+                id: 'SENG 41212'
+            }, {
+                name: 'Software Metrics and Measurements',
+                id: 'SENG 41222'
+            }, {
+                name: 'Digital Image Processing',
+                id: 'SENG 41233',
+                type: 'o'
+            }, {
+                name: 'Advanced Databases',
+                id: 'SENG 41242',
+                type: 'o'
+            }, {
+                name: 'Advanced Computer Networks',
+                id: 'SENG 41252',
+                type: 'o'
+            }, {
+                name: 'Speech Interfaces',
+                id: 'SENG 41262',
+                type: 'o'
+            }, {
+                name: 'Formal Methods',
+                id: 'SENG 41272',
+                type: 'o'
+            }, {
+                id: "SENG 41283",
+                name: "Distributed and Cloud Computing",
+                type: 'n'
+            }, {
+                id: "SENG 41293",
+                name: "Mobile Web Application Development",
+                type: 'm'
+            }, {
+                id: "SENG 41303",
+                name: "Big Data Infrastructure",
+                type: 'd'
+            }, {
+                id: "SENG 41313",
+                name: "Health Information Systems Design and Development",
+                type: 'h'
+            }, {
+                id: "SENG 41323",
+                name: "Games Design, Artwork, and Programming",
+                type: 'g'
+            }, {
+                id: "SENG 41333",
+                name: "Computer Based Operations Management",
+                type: 'b'
+            }]
+        },
+        {
+            sem: '8',
+            subs: [{
+                name: 'Software Safety and Reliability',
+                id: 'SENG 42212'
+            }, {
+                name: 'Usability Engineering',
+                id: 'SENG 42222',
+                type: 'o'
+            }, {
+                name: 'Software Management',
+                id: 'SENG 42232',
+                type: 'o'
+            }, {
+                name: 'Machine Learning',
+                id: 'SENG 42242',
+                type: 'o'
+            }, {
+                name: 'Computer Graphics',
+                id: 'SENG 42252',
+                type: 'o'
+            }, {
+                name: 'Software Engineering Research Project',
+                id: 'SENG 43216'
+            }, {
+                id: "SENG 42273",
+                name: "Semantic Web and Ontological Engineering",
+                type: 'n'
+            }, {
+                id: "SENG 42283",
+                name: "Mobile Networks",
+                type: 'm'
+            }, {
+                id: "SENG 42293",
+                name: "Big Data Analytics",
+                type: 'd'
+            }, {
+                id: "SENG 42303",
+                name: "Medical Imaging and Biomedial Signal Processing",
+                type: 'h'
+            }, {
+                id: "SENG 42313",
+                name: "Advanced Topics in Game Design and Animation",
+                type: 'g'
+            }, {
+                id: "SENG 42323",
+                name: "Business Process Engineering",
+                type: 'b'
+            }]
+        }
+        ]
+    }
     ];
 
     $scope.updateGPA = function updateGPA() {
@@ -412,36 +346,67 @@ app.controller('gpaCtrl', function ($scope) {
             displayLength: 500,
             classes: 'indigo'
         })
-        var tgpa = 0;
-        var tcd = 0;
+        
+        var numOfsubjects = 0;
+        var totalGpa = 0;
+        var totalCredit = 0;
+        var counter = [0,0,0];
+
         for (i = 0; i < $scope.subjects.length; i++) {
+
             var year = $scope.subjects[i];
-            var tygpa = 0;
-            var tycd = 0;
+            var yearGPA = 0;
+            var yearCredit = 0;
+
             for (k = 0; k < year.sems.length; k++) {
                 var sem = $scope.subjects[i].sems[k];
-                var tsemGPA = 0;
-                var tsemCD = 0;
+
+                var semesterGPA = 0;
+                var semesterCredit = 0;
+
                 for (j = 0; j < sem.subs.length; j++) {
                     var sub = sem.subs[j];
+
                     if (sub.grade) {
 
-                        tygpa += (sub.grade * sub.cd);
-                        tycd += sub.cd;
+                        numOfsubjects += 1;
 
-                        tsemGPA += (sub.grade * sub.cd);
-                        tsemCD += sub.cd;
+                        if(sub.grade > 4.0){
+                            counter[0] += 1;
+                        }else if(sub.grade == 4.0){
+                            counter[1] += 1;
+                        }else if(sub.grade < 2.0){
+                            counter[2] += 1;
+                        }
 
-                        tgpa += (sub.grade * sub.cd);
-                        tcd += sub.cd;
+                        subGPA = (sub.grade * sub.id.substr(-1));
+                        subCredit = 1 * sub.id.substr(-1);
+
+                        semesterGPA += subGPA;
+                        yearGPA += subGPA;
+                        totalGpa += subGPA;
+
+                        semesterCredit += subCredit;
+                        yearCredit += subCredit;
+                        totalCredit += subCredit;
                     }
+
                 }
-                sem.tCd = tsemCD;
-                sem.semgpa = tsemGPA / tsemCD;
+                sem.totalCredit = semesterCredit;
+                sem.semgpa = semesterGPA / semesterCredit;
             }
-            year.ygpa = tygpa / tycd;
+
+            year.ygpa = yearGPA / yearCredit;
         }
-        $scope.cgpa = tgpa / tcd;
+
+        $scope.AplusCount = counter[0];
+        $scope.ACount = counter[1];
+        $scope.RepeatCount = counter[2];
+
+        $scope.numOfSubjects = numOfsubjects;
+        $scope.totalCd = totalCredit;
+        $scope.cgpa = totalGpa / totalCredit;
+
         localStorage.setItem('subjects', angular.toJson($scope.subjects));
         localStorage.setItem('cgpa', angular.toJson($scope.cgpa));
     }
@@ -464,63 +429,62 @@ app.controller('gpaCtrl', function ($scope) {
         $scope.updateGPA();
     }
 
-    $scope.grades = [
-        {
-            name: 'A+',
-            val: 4.000000000000001
-        },
-        {
-            name: 'A',
-            val: 4.0
-        },
-        {
-            name: 'A-',
-            val: 3.7
-        },
-        {
-            name: 'B+',
-            val: 3.3
-        },
-        {
-            name: 'B',
-            val: 3.0
-        },
-        {
-            name: 'B-',
-            val: 2.7
-        },
-        {
-            name: 'C+',
-            val: 2.3
-        },
-        {
-            name: 'C',
-            val: 2.0
-        },
-        {
-            name: 'C-',
-            val: 1.7
-        },
-        {
-            name: 'D+',
-            val: 1.3
-        },
-        {
-            name: 'D',
-            val: 1.0
-        },
-        {
-            name: 'D-',
-            val: 0.7
-        },
-        {
-            name: 'E',
-            val: 0.3
-        },
-        {
-            name: '-',
-            val: 0.0
-        }
+    $scope.grades = [{
+        name: 'A+',
+        val: 4.0000000001
+    },
+    {
+        name: 'A',
+        val: 4.0
+    },
+    {
+        name: 'A-',
+        val: 3.7
+    },
+    {
+        name: 'B+',
+        val: 3.3
+    },
+    {
+        name: 'B',
+        val: 3.0
+    },
+    {
+        name: 'B-',
+        val: 2.7
+    },
+    {
+        name: 'C+',
+        val: 2.3
+    },
+    {
+        name: 'C',
+        val: 2.0
+    },
+    {
+        name: 'C-',
+        val: 1.7
+    },
+    {
+        name: 'D+',
+        val: 1.3
+    },
+    {
+        name: 'D',
+        val: 1.0
+    },
+    {
+        name: 'D-',
+        val: 0.7
+    },
+    {
+        name: 'E',
+        val: 0.3
+    },
+    {
+        name: '-',
+        val: 0
+    }
     ]
 
     $scope.reset = function reset() {

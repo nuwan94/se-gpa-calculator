@@ -16,6 +16,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 </head>
 
@@ -44,8 +45,9 @@
                 <div class="col s12">
                     <ul class="tabs">
                         <li class="tab col s3" ng-repeat="z in subjects">
-                            <a class="active" href="#test{{z.year}}" >Year {{z.year}} <span class="badge blue white-text">{{z.ygpa?z.ygpa:0 | number:2}}</span></a>
-                            
+                            <a class="active" href="#test{{z.year}}">Year {{z.year}} <span
+                                    class="badge blue white-text">{{z.ygpa?z.ygpa:0 | number:2}}</span></a>
+
                         </li>
                         <!-- <li class="tab col s3"><a href="#test2">Year 2</a></li>
                         <li class="tab col s3"><a href="#test3">Year 3</a></li>
@@ -54,28 +56,66 @@
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="">Credits : {{s.tCd}} | GPA : {{s.semgpa | number : 2}} 
+                        <h6 class="">Credits : {{ s.totalCredit }} | GPA : {{ s.semgpa | number : 2 }}
                             <!-- <span class="badge indigo white-text">
                                 {{s.sem}}</span> -->
-                            </h6>
+                        </h6>
                         <div class="row" ng-repeat="x in s.subs">
-                            <div class="col s4 m3">{{x.id.substr(0,9)}}<b>{{x.id.substr(-1)}}</b> <br><span ng-if="x.type" class="badge indigo left white-text">{{ x.type | getType }}</span></div>
+                            <div class="col s4 m3">{{x.id.substr(0,9)}}<b>{{x.id.substr(-1)}}</b> <br><span
+                                    ng-if="x.type" class="badge indigo left white-text">{{ x.type | getType }}</span>
+                            </div>
                             <div class="col s8 m6">{{x.name | uppercase }} </div>
                             <div class="col s12 m3">
                                 <!-- browser-default -->
-                                <select class="browser-default" ng-class="x.grade | getClass" ng-model="x.grade" ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
+                                <select class="browser-default" ng-class="x.grade | getClass" ng-model="x.grade"
+                                    ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
+            </div>
+
+            <div class="floating-stat show-on-large">
+                <table class="table-responsive highlight">
+                    <tbody>
+                        <!-- <tr>
+                            <td colspan="2"><i class="medium material-icons">insert_chart</i></td>
+                        </tr> -->
+                        <tr>
+                            <td>Credits</td>
+                            <td>{{totalCd}}</td>
+                        </tr>
+                        <tr>
+                            <td>Subjects</td>
+                            <td>{{ numOfSubjects }}</td>
+                        </tr>
+                        <tr>
+                            <td>A+</td>
+                            <td>{{AplusCount}}</td>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td>{{ACount}}</td>
+                        </tr>
+                        <tr>
+                            <td>Repeat</td>
+                            <td>{{RepeatCount}}</td>
+                        </tr>
+                        <tr class="green" ng-if="RepeatCount == 0">
+                            <td colspan="2">Eligible</td>
+                        </tr>
+                        <tr class="red" ng-if="cgpa < 2.0">
+                            <td colspan="2">Not Eligible</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
     </main>
-
 
     <footer class=" blue-grey darken-4">
         <div class="footer-copyright">
@@ -95,18 +135,18 @@
     <script src="js/upup.min.js"></script>
     <script>
         UpUp.start({
-          'content-url': 'index.html',
-          'assets': [
-            'css/main.css',
-            'css/materialize.min.css',
-            'js/jquery-3.3.1.min.js',
-            'js/materialize.min.js',
-            'js/angular.min.js',
-            'js/main.js',
-            'js/upup.min.js'
-          ]
+            'content-url': 'index.html',
+            'assets': [
+                'css/main.css',
+                'css/materialize.min.css',
+                'js/jquery-3.3.1.min.js',
+                'js/materialize.min.js',
+                'js/angular.min.js',
+                'js/main.js',
+                'js/upup.min.js'
+            ]
         });
-      </script>
+    </script>
 
 </body>
 
