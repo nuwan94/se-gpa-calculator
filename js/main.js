@@ -504,7 +504,7 @@ app.controller('gpaCtrl', function ($scope) {
 
         } catch (err) {
             $scope.reset();
-            console.log(err);
+            console.log("resetting...\n" + err);
         }
 
 

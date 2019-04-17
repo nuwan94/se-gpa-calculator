@@ -1,13 +1,14 @@
-# SE-GPA-Calculator
+# Software Engineering GPA Calculator - University of Kelaniya
 
 Simple GPA Calculator with pre-entered subject list for SE 2015/16 Batch.
 
-Website : https://nuwan.dev/SE-GPA-Calculator/
+LINK : https://nuwan94.github.io/se-gpa-calculator/
 
 -----
 ### To-do
-- [x] Show cumulative GPA
-- [x] Show semeseter vise GPA
-- [x] Add all the course codes
-- [ ] Ability to add/edit subjects and credits
+
+- [x] Cumulative GPA
+- [x] Semeseter GPA
+- [x] Add all subjects
 - [ ] Firebase integration
+- [ ] Leaderboard
