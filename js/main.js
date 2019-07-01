@@ -248,19 +248,19 @@ app.controller('gpaCtrl', function ($scope) {
                         },
 
                         // Not Available for 2015/16
-                        // {
-                        //     id: "SENG 31272",
-                        //     name: "Internet of Things",
-                        //     type: 'o'
-                        // }, {
-                        //     id: "SENG 31282",
-                        //     name: "Computer Network Management",
-                        //     type: 'o'
-                        // }, {
-                        //     id: "SENG 31292",
-                        //     name: "Enterprise Information Systems",
-                        //     type: 'o'
-                        // }, 
+                        {
+                            id: "SENG 31272",
+                            name: "Internet of Things",
+                            type: 'o'
+                        }, {
+                            id: "SENG 31282",
+                            name: "Computer Network Management",
+                            type: 'o'
+                        }, {
+                            id: "SENG 31292",
+                            name: "Enterprise Information Systems",
+                            type: 'o'
+                        }, 
                         {
                             id: "SENG 34222",
                             name: "Software Process"
@@ -419,9 +419,8 @@ app.controller('gpaCtrl', function ($scope) {
             classes: 'indigo'
         })
 
-        var numOfsubjects = 0;
-        var totalGpa = 0;
-        var totalCredit = 0;
+        var numOfsubjects = 0 ,totalNumOfsubjects = 0;
+        var totalGpa = 0, totalCredit = 0, totalAvalCredit = 0;
         var counter = [0, 0, 0];
 
         for (i = 0; i < $scope.subjects.length; i++) {
@@ -435,9 +434,14 @@ app.controller('gpaCtrl', function ($scope) {
 
                 var semesterGPA = 0;
                 var semesterCredit = 0;
+                var totalSemCredit = 0;
+                
 
                 for (j = 0; j < sem.subs.length; j++) {
                     var sub = sem.subs[j];
+
+                    subCredit = 1 * sub.id.substr(-1);
+                    totalNumOfsubjects += 1;
 
                     if (sub.grade) {
 
@@ -452,7 +456,7 @@ app.controller('gpaCtrl', function ($scope) {
                         }
 
                         subGPA = (sub.grade * sub.id.substr(-1));
-                        subCredit = 1 * sub.id.substr(-1);
+                        
 
                         semesterGPA += subGPA;
                         yearGPA += subGPA;
@@ -462,10 +466,13 @@ app.controller('gpaCtrl', function ($scope) {
                         yearCredit += subCredit;
                         totalCredit += subCredit;
                     }
-
+                    totalAvalCredit += subCredit;
+                    totalSemCredit += subCredit;
                 }
-                sem.totalCredit = semesterCredit;
+                sem.semesterCredit = semesterCredit;
+                sem.totalSemCredit = totalSemCredit;
                 sem.semgpa = semesterGPA / semesterCredit;
+                sem.semgpa = (sem.semgpa)? sem.semgpa : 0;
             }
 
             year.ygpa = yearGPA / yearCredit;
@@ -476,8 +483,10 @@ app.controller('gpaCtrl', function ($scope) {
         $scope.RepeatCount = counter[2];
 
         $scope.numOfSubjects = numOfsubjects;
+        $scope.totalNumOfsubjects = totalNumOfsubjects;
         $scope.totalCd = totalCredit;
-        $scope.cgpa = totalGpa / totalCredit;
+        $scope.totalAvalCd = totalAvalCredit;
+        $scope.cgpa = (totalGpa)? (totalGpa / totalCredit) : 0;
 
         localStorage.setItem('subjects', angular.toJson($scope.subjects));
         localStorage.setItem('cgpa', angular.toJson($scope.cgpa));
@@ -506,7 +515,6 @@ app.controller('gpaCtrl', function ($scope) {
             $scope.reset();
             console.log("resetting...\n" + err);
         }
-
 
     }
 

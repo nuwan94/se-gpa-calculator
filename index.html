@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 </head>
 
-<body ng-controller="gpaCtrl">
+<body ng-controller="gpaCtrl" ng-init="updateGPA()">
     <div class="loader blue-grey darken-4">
         <div class="progress blue-grey darken-4">
             <div class="indeterminate indigo"></div>
@@ -47,7 +47,6 @@
                         <li class="tab col s3" ng-repeat="z in subjects">
                             <a class="active" href="#test{{z.year}}">Year {{z.year}} <span
                                     class="badge blue white-text">{{z.ygpa?z.ygpa:0 | number:2}}</span></a>
-
                         </li>
                         <!-- <li class="tab col s3"><a href="#test2">Year 2</a></li>
                         <li class="tab col s3"><a href="#test3">Year 3</a></li>
@@ -55,8 +54,9 @@
                     </ul>
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
+
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="">Credits : {{ s.totalCredit }} | GPA : {{ s.semgpa | number : 2 }}
+                        <h6 class="">Credits : {{ s.semesterCredit }} / {{s.totalSemCredit}} <span style="float:right">GPA : {{ s.semgpa | number : 2 }}</span>
                             <!-- <span class="badge indigo white-text">
                                 {{s.sem}}</span> -->
                         </h6>
@@ -87,11 +87,11 @@
                         </tr> -->
                         <tr>
                             <td>Credits</td>
-                            <td>{{totalCd}}</td>
+                            <td>{{totalCd}} <small>out of {{totalAvalCd}}</small></td>
                         </tr>
                         <tr>
                             <td>Subjects</td>
-                            <td>{{ numOfSubjects }}</td>
+                            <td>{{ numOfSubjects }} <small>out of {{totalNumOfsubjects}}</small></td>
                         </tr>
                         <tr>
                             <td>A+</td>

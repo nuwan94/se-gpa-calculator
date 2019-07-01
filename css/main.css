@@ -1,6 +1,14 @@
+html{
+    font-size: 14px;
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     cursor: default;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 ::selection {
@@ -96,13 +104,6 @@ select {
 footer {
     padding: 1em;
     color: #fff;
-}
-
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
 }
 
 main {
