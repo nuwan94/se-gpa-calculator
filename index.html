@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SE - GPA Calculator</title>
+    <title>GPA Calculator - {{ courseTitle }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -12,11 +12,10 @@
     <meta name="msapplication-TileColor" content="#3f51b5">
     <meta name="theme-color" content="#3f51b5">
 
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 </head>
 
@@ -29,47 +28,153 @@
 
 
     <main>
+        <ul id="slide-out" class="sidenav">
+
+            <li>
+                <a class="btn-flat hide-on-large-only modal-trigger" href="#modal1">
+                    <i class="material-icons left">delete_sweep</i> Reset
+                </a>
+                <a class="btn-flat hide-on-large-only">
+                    <i class="material-icons left">share</i> Share
+                </a>
+            </li>
+            <li><a class="subheader">Overall</a></li>
+            <li>
+                <a>
+                    Credits : {{ myTotalCredit }} <small>out of {{ totalCourseCredit }}</small>
+                </a>
+                <div class="progress">
+                    <div class="determinate" ng-style="{ 'width' : (myTotalCredit/totalCourseCredit) * 100 + '%' }">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a>
+                    Subjects : {{ mySubjects }} <small>out of {{ totalNumOfSubjects }}</small>
+                </a>
+                <div class="progress">
+                    <div class="determinate" ng-style="{ 'width' : (mySubjects/totalNumOfSubjects) * 100 + '%' }">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Grades</a></li>
+            <li>
+                <table class="centered striped">
+                    <tr>
+                        <td>A+</td>
+                        <td>A</td>
+                        <td>A-</td>
+                        <td>B+</td>
+                        <td>B</td>
+                        <td>B-</td>
+                        <td>C+</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>{{results.get(4.0000000001) || '0'}}</td>
+                        <td>{{results.get(4.0) || '0'}}</td>
+                        <td>{{results.get(3.7) || '0'}}</td>
+                        <td>{{results.get(3.3) || '0'}}</td>
+                        <td>{{results.get(3.0) || '0'}}</td>
+                        <td>{{results.get(2.7) || '0'}}</td>
+                        <td>{{results.get(2.3) || '0'}}</td>
+                        <td>{{results.get(2.0) || '0'}}</td>
+                    </tr>
+
+                </table>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Eligibility</a></li>
+            <li>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+
+                            <div class="card-content center">
+                                <p>
+                                    <i class="material-icons large" ng-class="eligibleStyle">school</i>
+                                </p>
+                                <h5> {{ greetingsText }} </h5>
+                                <p>
+                                    {{ eligibilityText }}
+                                    <!-- Congrats! You are eligible for "First Class Honors Degree" so far. -->
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <center>
+                    <i class="material-icons large green-text">flag</i>
+                    <h4>First Class</h4>
+                </center> -->
+            </li>
+        </ul>
+
+
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper  blue-grey darken-4">
                     <img class="brand-logo logo left" src="favicon.png" />
-                    <div href="#" class="brand-logo GPA center">GPA : {{cgpa | number : 2}}</div>
-                    <button class="right btn waves-effect waves-light indigo" ng-click="reset()">RESET</button>
+                    <img class="brand-logo logo left" src="favicon.png" />
+                    <div href="#" class="brand-logo GPA center">GPA : {{ myGPA | number : 2 }}</div>
+
+                    <a data-target="slide-out" class="right sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
+
+
+                    <button class="right btn-flat white-text hide-on-med-and-down modal-trigger" href="#modal1">
+                        <i class="material-icons">delete_sweep</i>
+                    </button>
+
+                    <!-- <button class="right btn-flat white-text hide-on-med-and-down">
+                        <i class="material-icons">share</i>
+                    </button> -->
+
+                    <button class="right btn-flat white-text sidenav-trigger hide-on-med-and-down tooltipped"
+                        data-target="slide-out">
+                        <i class="material-icons">explore</i>
+                    </button>
+
                 </div>
             </nav>
         </div>
 
         <div class="container">
-
             <div class="row subjectTab">
                 <div class="col s12">
                     <ul class="tabs">
                         <li class="tab col s3" ng-repeat="z in subjects">
-                            <a class="active" href="#test{{z.year}}">Year {{z.year}} <span
-                                    class="badge blue white-text">{{z.ygpa?z.ygpa:0 | number:2}}</span></a>
+                            <a class="active" href="#test{{z.year}}">Year {{ z.year }} <span
+                                    class="badge blue white-text">{{ z.yearGPA  ? z.yearGPA : 0 | number:2 }}</span></a>
                         </li>
-                        <!-- <li class="tab col s3"><a href="#test2">Year 2</a></li>
-                        <li class="tab col s3"><a href="#test3">Year 3</a></li>
-                        <li class="tab col s3"><a href="#test4">Year 4</a></li> -->
                     </ul>
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
 
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="">Credits : {{ s.semesterCredit }} / {{s.totalSemCredit}} <span style="float:right">GPA : {{ s.semgpa | number : 2 }}</span>
-                            <!-- <span class="badge indigo white-text">
-                                {{s.sem}}</span> -->
+                        <h6 class="">Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }} <span
+                                style="float:right">GPA
+                                : {{ s.semesterGPA | number : 2 }}</span>
                         </h6>
-                        <div class="row" ng-repeat="x in s.subs">
+                        <div class="row subRow" ng-repeat="x in s.subs" title="Subject {{$index+1}} : {{ x.name }}">
                             <div class="col s4 m3">
-                                {{x.id.substr(0,9)}}<b>{{x.id.substr(-1)}}</b><br>
-                                <span ng-if="x.type" ng-class="x.type" class="badge left white-text">{{ x.type | getType }}</span>
+                                <!-- <span class="subIndexNumber show-on-large">{{ $index+1 }}</span> -->
+                                {{ x.id.substr(0,9) }}<b>{{ x.id.substr(-1) }}</b><br>
+                                <span ng-if="x.type" ng-class="x.type"
+                                    class="badge left white-text">{{ x.type | getType }}</span>
                             </div>
-                            <div class="col s8 m6 subName">{{x.name | lowercase }} </div>
-                            <div class="col s12 m3">
+                            <div class="col s8 m6 subName">{{ x.name }} </div>
+                            <div class="col s12 m3 input-field" ng-class="x.grade | getGradeClass">
                                 <!-- browser-default -->
-                                <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade"
-                                    ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
+                                <select ng-model="x.grade" ng-change="updateGPA()"
+                                    ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
                         </div>
@@ -78,42 +183,6 @@
                 </div>
 
             </div>
-
-            <div class="floating-stat show-on-large">
-                <table class="table-responsive highlight">
-                    <tbody>
-                        <!-- <tr>
-                            <td colspan="2"><i class="medium material-icons">insert_chart</i></td>
-                        </tr> -->
-                        <tr>
-                            <td>Credits</td>
-                            <td>{{totalCd}} <small>out of {{totalAvalCd}}</small></td>
-                        </tr>
-                        <tr>
-                            <td>Subjects</td>
-                            <td>{{ numOfSubjects }} <small>out of {{totalNumOfsubjects}}</small></td>
-                        </tr>
-                        <tr>
-                            <td>A+</td>
-                            <td>{{AplusCount}}</td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>{{ACount}}</td>
-                        </tr>
-                        <tr>
-                            <td>Repeat</td>
-                            <td>{{RepeatCount}}</td>
-                        </tr>
-                        <!-- <tr class="green" ng-if="RepeatCount == 0">
-                            <td colspan="2">Eligible</td>
-                        </tr>
-                        <tr class="red" ng-if="cgpa < 2.0">
-                            <td colspan="2">Not Eligible</td>
-                        </tr> -->
-                    </tbody>
-                </table>
-            </div>
         </div>
 
     </main>
@@ -121,18 +190,34 @@
     <footer class=" blue-grey darken-4">
         <div class="footer-copyright">
             <div class="container">
-                Nuwan94 © 2018
-                <a class="grey-text text-lighten-4 right" target="_blank" href="https://github.com/Nuwan94/se-gpa-calculator">❤
-                    Github</a>
+                GPA Calculator - {{ courseTitle }}
+                <a class="grey-text text-lighten-4 right" target="_blank"
+                    href="https://github.com/nuwan94/se-gpa-calculator"><span class="red-text">❤</span>
+                    GitHub</a>
+                <br /> <a href="https://nuwan.dev" target="_blank">Nuwan94</a> © 2018
             </div>
         </div>
     </footer>
 
-    <!-- Compiled and minified JavaScript -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Are you sure?</h4>
+            <p class="center"><i class="material-icons large grey-text">delete</i>
+                <br>By resetting all your data will be deleted and reset to empty status. This action can't undone.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn grey">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn indigo" ng-click="reset()">Reset</a>
+        </div>
+    </div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/grades.js"></script>
+    <script src="js/course.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 

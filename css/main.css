@@ -1,4 +1,4 @@
-html{
+html {
     font-size: 14px;
 }
 
@@ -25,17 +25,22 @@ body {
     padding: .5em;
 }
 
-.logo{
-    height: 80%;margin-top: 0em;
+.nav-wrapper button{
+    margin-top: -0.5em;
 }
 
-.GPA{
+.logo {
+    height: 80%;
+    margin-top: 0em;
+}
+
+.GPA {
     margin-top: -0.25em;
 }
 
 .subjectTab {
     margin-top: 2em;
-    
+
 }
 
 .subjectTab .row {
@@ -56,30 +61,84 @@ body {
     color: #fff;
 }
 
-.subName {text-transform: capitalize;}
+.sidenav li p{
+    line-height: 1.5em;
+}
+
+/* .subRow {    
+    position: relative;
+}
+
+.subIndexNumber {
+    display: none;
+    position: absolute;
+    left: -1.25em;
+    background: #263238ff;;
+    color: #fff;
+    width: 2em;
+    text-align: center;
+} */
+
+.input-field{
+    margin: 0;
+}
 
 select {
     height: 3rem;
-    text-align:center;
+    text-align: center;
 }
 
-.row .col.tab {background: #fff;}
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #111;
+}
 
-.semContent .o{background: #333;}
-.semContent .n{background: #3f51b5;}
-.semContent .m{background: #4caf50;}
-.semContent .d{background: #e57373;}
-.semContent .g{background: #4a148c;}
-.semContent .h{background: #ffab00;}
-.semContent .b{background: #00796b;}
+.select-wrapper input.select-dropdown, .select-wrapper input.select-dropdown:focus{
+    border-bottom: none;
+}
 
-.tab {background: #3f51b5;}
+.row .col.tab {
+    background: #fff;
+}
 
-.tab a {color: #333 !important;}
+.semContent .o {
+    background: #333;
+}
+
+.semContent .n {
+    background: #3f51b5;
+}
+
+.semContent .m {
+    background: #4caf50;
+}
+
+.semContent .d {
+    background: #e57373;
+}
+
+.semContent .g {
+    background: #4a148c;
+}
+
+.semContent .h {
+    background: #ffab00;
+}
+
+.semContent .b {
+    background: #00796b;
+}
+
+.tab {
+    background: #3f51b5;
+}
+
+.tab a {
+    color: #333 !important;
+}
 
 .tab a.active {
     background-color: #263238 !important;
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .indicator {
@@ -93,10 +152,10 @@ select {
 
 .semContent {
     margin-bottom: 1em;
-    
+
 }
 
-.semContent .badge{
+.semContent .badge {
     margin-left: 0;
     font-size: .75em;
 }
@@ -121,26 +180,27 @@ main {
     top: 50%;
     transform: translate(-50%);
     width: 50%;
-    left:50%;
+    left: 50%;
 }
 
-.floating-stat{
+.floating-stat {
     display: none;
     background: #fff;
 }
 
-@media screen and (max-width: 700px) {
-    .container{
+@media screen and (max-width: 1200px) {
+    .container {
         width: 100%;
     }
+
     .row .col {
         padding: 0.1em .5em;
     }
-    
+
 }
 
 @media screen and (min-width: 700px) {
-    .subjectTab{
+    .subjectTab {
         border-radius: 10px;
         background: #fff;
         box-shadow: 0 0 10px #ddd;
@@ -150,27 +210,13 @@ main {
         border-radius: 0 0 10px 10px;
     }
 
-    body{
+    body {
         background: #eee;
     }
-    
+
 }
 
 @media screen and (min-width: 1200px) {
-    .floating-stat{
-        width: 150px;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        /* background: #263238; */
-        /* color: #fff; */
-    }
-    .floating-stat td{
-        padding: 15px;
-    }
-    .floating-stat .green, .floating-stat .red{
-        color : #fff;
-    }
-
-
+    
 }
+
