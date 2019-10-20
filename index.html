@@ -171,9 +171,9 @@
                                     class="badge left white-text">{{ x.type | getType }}</span>
                             </div>
                             <div class="col s8 m6 subName">{{ x.name }} </div>
-                            <div class="col s12 m3 input-field" ng-class="x.grade | getGradeClass">
-                                <!-- browser-default -->
-                                <select ng-model="x.grade" ng-change="updateGPA()"
+                            <div class="col s12 m3 input-field" >
+                               
+                                <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade" ng-change="updateGPA()"
                                     ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
