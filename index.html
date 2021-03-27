@@ -4,13 +4,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GPA Calculator - {{ courseTitle }}</title>
+    <title>GPA Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <meta name="msapplication-TileColor" content="#3f51b5">
     <meta name="theme-color" content="#3f51b5">
+    <meta name="description"
+        content="GPA Calculator developed by Nuwan Sameera Alawatta for BSc (Hons) in Software Engineering degree programme, University of Kelaniya, Sri Lanka.">
+    <meta name="keywords"
+        content="uok, university of kelaniya, uokse, software enigneering sri lanka, it sri lanka, nuwan alawatta, nuwan94, nsa94">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="css/materialize.min.css" />
@@ -26,10 +30,8 @@
         </div>
     </div>
 
-
     <main>
         <ul id="slide-out" class="sidenav">
-
             <li>
                 <a class="btn-flat hide-on-large-only modal-trigger" href="#modal1">
                     <i class="material-icons left">delete_sweep</i> Reset
@@ -102,17 +104,11 @@
                                 <h5> {{ greetingsText }} </h5>
                                 <p>
                                     {{ eligibilityText }}
-                                    <!-- Congrats! You are eligible for "First Class Honors Degree" so far. -->
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <center>
-                    <i class="material-icons large green-text">flag</i>
-                    <h4>First Class</h4>
-                </center> -->
             </li>
         </ul>
 
@@ -128,19 +124,28 @@
                         <i class="material-icons">menu</i>
                     </a>
 
-
-                    <button class="right btn-flat white-text hide-on-med-and-down modal-trigger" href="#modal1">
+                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down modal-trigger tooltipped" data-position="bottom" data-tooltip="Reset"
+                        href="#modal1">
                         <i class="material-icons">delete_sweep</i>
                     </button>
 
-                    <!-- <button class="right btn-flat white-text hide-on-med-and-down">
-                        <i class="material-icons">share</i>
-                    </button> -->
-
-                    <button class="right btn-flat white-text sidenav-trigger hide-on-med-and-down tooltipped"
+                    <button class="right adjust-btn btn-flat white-text sidenav-trigger hide-on-med-and-down tooltipped" data-position="bottom" data-tooltip="Analysis"
                         data-target="slide-out">
                         <i class="material-icons">explore</i>
                     </button>
+
+                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down tooltipped" data-position="bottom" data-tooltip="Export"
+                        ng-click="downloadResult()">
+                        <i class="material-icons">download</i>
+                    </button>
+
+                    <div class="right adjust-btn btn-flat white-text hide-on-med-and-down file-field input-field tooltipped" data-position="bottom" data-tooltip="Import">
+                        <i class="material-icons">attach_file</i>
+                        <input type="file" onchange="angular.element(this).scope().uploadResult(this)">
+                        <!-- <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                        </div> -->
+                    </div>
 
                 </div>
             </nav>
@@ -152,12 +157,11 @@
                     <ul class="tabs">
                         <li class="tab col s3" ng-repeat="z in subjects">
                             <a class="active" href="#test{{z.year}}">Year {{ z.year }} <span
-                                    class="badge blue white-text">{{ z.yearGPA  ? z.yearGPA : 0 | number:2 }}</span></a>
+                                    class="badge blue white-text">{{ z.yearGPA ? z.yearGPA : 0 | number:2 }}</span></a>
                         </li>
                     </ul>
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
-
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
                         <h6 class="">Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }} <span
                                 style="float:right">GPA
@@ -165,16 +169,15 @@
                         </h6>
                         <div class="row subRow" ng-repeat="x in s.subs" title="Subject {{$index+1}} : {{ x.name }}">
                             <div class="col s4 m3">
-                                <!-- <span class="subIndexNumber show-on-large">{{ $index+1 }}</span> -->
                                 {{ x.id.substr(0,9) }}<b>{{ x.id.substr(-1) }}</b><br>
-                                <span ng-if="x.type" ng-class="x.type"
-                                    class="badge left white-text">{{ x.type | getType }}</span>
+                                <span ng-if="x.type" ng-class="x.type" class="badge left white-text">
+                                    {{ x.type | getType }}
+                                </span>
                             </div>
                             <div class="col s8 m6 subName">{{ x.name }} </div>
-                            <div class="col s12 m3 input-field" >
-                               
-                                <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade" ng-change="updateGPA()"
-                                    ng-options="y.val as y.name for y in grades">
+                            <div class="col s12 m3 input-field">
+                                <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade"
+                                    ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
                                 </select>
                             </div>
                         </div>
@@ -203,7 +206,8 @@
         <div class="modal-content">
             <h4>Are you sure?</h4>
             <p class="center"><i class="material-icons large grey-text">delete</i>
-                <br>By resetting all your data will be deleted and reset to empty status. This action can't undone.</p>
+                <br>By resetting all your data will be deleted and reset to empty status. This action can't undone.
+            </p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn grey">Cancel</a>
@@ -214,7 +218,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/angular.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/grades.js"></script>
     <script src="js/course.js"></script>
     <script src="js/app.js"></script>

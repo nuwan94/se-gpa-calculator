@@ -1,10 +1,7 @@
 /* 
 
-GPA Calulator by Nuwan94
+GPA Calculator by Nuwan94
 https://github.com/nuwan94/se-gpa-calculator
-
-
-
 
 */
 
@@ -82,7 +79,7 @@ var courseUnits = [{
             name: 'Management for Software Engineering II',
             id: 'SENG 21272'
         }, {
-            name: 'Computer Netwokrs',
+            name: 'Computer Networks',
             id: 'SENG 24213'
         }, {
             name: 'Interactive Application Development',
@@ -289,7 +286,7 @@ var courseUnits = [{
             type: 'd'
         }, {
             id: "SENG 42303",
-            name: "Medical Imaging and Biomedial Signal Processing",
+            name: "Medical Imaging and Biomedical Signal Processing",
             type: 'h'
         }, {
             id: "SENG 42313",

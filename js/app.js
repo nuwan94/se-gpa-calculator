@@ -6,6 +6,7 @@ angular.element(function () {
     $('.loader').delay(500).fadeOut();
     $('.sidenav').sidenav();
     $('.modal').modal();
+    $('.tooltipped').tooltip();
 });
 
 app.run(function ($rootScope) {
@@ -60,15 +61,31 @@ app.controller('gpaCtrl', function ($scope) {
         window.location.reload();
     }
 
-    $scope.downlaodResult = function downlaodResult() {
+    $scope.downloadResult = function downloadResult() {
         let data = JSON.stringify($scope.subjects);
-        console.log(data)
+        let name_date = new Date().toISOString().split("T")[0];
         let href = "data:text/json;charset=utf-8," + encodeURIComponent(data),
             anchor = document.createElement('a'),
-            filename = 'download';
+            filename = 'gpa-calc-export - ' + name_date + '.json';
         anchor.setAttribute("href", href);
         anchor.setAttribute("download", filename);
+        anchor.setAttribute("type", "json");
         anchor.click();
+    }
+
+    $scope.uploadResult = function uploadResult(fileEl) {
+        var files = fileEl.files;
+        var file = files[0];
+        var reader = new FileReader();
+        reader.onloadend = function (evt) {
+            if (evt.target.readyState === FileReader.DONE) {
+                $scope.$apply(function () {
+                    $scope.subjects = JSON.parse(evt.target.result);
+                    $scope.updateGPA();
+                });
+            }
+        };
+        reader.readAsText(file);
     }
 
     function calGPA(sumOfGPA, sumOfCredits) {

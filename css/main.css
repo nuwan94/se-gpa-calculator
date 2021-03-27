@@ -25,8 +25,10 @@ body {
     padding: .5em;
 }
 
-.nav-wrapper button{
-    margin-top: -0.5em;
+.nav-wrapper .adjust-btn{
+    margin-top: -0.5em !important;
+    height: 100% !important;
+    width: 5em;
 }
 
 .logo {
