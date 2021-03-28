@@ -147,11 +147,11 @@ app.controller('gpaCtrl', function ($scope) {
 
         for (i = 0; i < $scope.subjects.length; i++) {
 
-            let currentyear = $scope.subjects[i];
-            let yearGPA = 0;
-            let yearCredit = 0;
+            let currentYear = $scope.subjects[i],
+                yearGPA = 0,
+                yearCredit = 0;
 
-            for (k = 0; k < currentyear.sems.length; k++) {
+            for (k = 0; k < currentYear.sems.length; k++) {
 
                 let semester = $scope.subjects[i].sems[k];
 
@@ -191,12 +191,12 @@ app.controller('gpaCtrl', function ($scope) {
 
                 semester.semesterCredit = semesterCredit;
                 semester.totalSemesterCredit = totalSemesterCredit;
-
                 semester.semesterGPA = calGPA(semesterGPA, semesterCredit);
 
             }
 
-            currentyear.yearGPA = yearGPA / yearCredit;
+            currentYear.yearGPA = yearGPA / yearCredit;
+            currentYear.yearCredit = yearCredit;
         }
 
         $scope.results = myResults.reduce((acc, e) => acc.set(e, acc.get(e) + 1 || 1), new Map());

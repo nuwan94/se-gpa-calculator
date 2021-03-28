@@ -124,27 +124,25 @@
                         <i class="material-icons">menu</i>
                     </a>
 
-                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down modal-trigger tooltipped" data-position="bottom" data-tooltip="Reset"
-                        href="#modal1">
+                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down modal-trigger tooltipped"
+                        data-position="bottom" data-tooltip="Reset" href="#modal1">
                         <i class="material-icons">delete_sweep</i>
                     </button>
 
-                    <button class="right adjust-btn btn-flat white-text sidenav-trigger hide-on-med-and-down tooltipped" data-position="bottom" data-tooltip="Analysis"
-                        data-target="slide-out">
+                    <button class="right adjust-btn btn-flat white-text sidenav-trigger hide-on-med-and-down tooltipped"
+                        data-position="bottom" data-tooltip="Analysis" data-target="slide-out">
                         <i class="material-icons">explore</i>
                     </button>
 
-                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down tooltipped" data-position="bottom" data-tooltip="Export"
-                        ng-click="downloadResult()">
+                    <button class="right adjust-btn btn-flat white-text hide-on-med-and-down tooltipped"
+                        data-position="bottom" data-tooltip="Export" ng-click="downloadResult()">
                         <i class="material-icons">download</i>
                     </button>
 
-                    <div class="right adjust-btn btn-flat white-text hide-on-med-and-down file-field input-field tooltipped" data-position="bottom" data-tooltip="Import">
+                    <div class="right adjust-btn btn-flat white-text hide-on-med-and-down file-field input-field tooltipped"
+                        data-position="bottom" data-tooltip="Import">
                         <i class="material-icons">attach_file</i>
                         <input type="file" onchange="angular.element(this).scope().uploadResult(this)">
-                        <!-- <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text" placeholder="Upload one or more files">
-                        </div> -->
                     </div>
 
                 </div>
@@ -156,20 +154,21 @@
                 <div class="col s12">
                     <ul class="tabs">
                         <li class="tab col s3" ng-repeat="z in subjects">
-                            <a class="active" href="#test{{z.year}}">Year {{ z.year }} <span
-                                    class="badge blue white-text">{{ z.yearGPA ? z.yearGPA : 0 | number:2 }}</span></a>
+                            <a class="active" href="#test{{z.year}}">Year {{ z.year }}
+                                <span class="badge blue white-text tooltipped" data-position="bottom"
+                                    data-tooltip="Year {{z.year}} GPA">{{ z.yearGPA ? z.yearGPA : 0 | number:2 }}</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div id="test{{z.year}}" class="tabContent col s12" ng-repeat="z in subjects">
                     <div class="col s12 m6 semContent" ng-repeat="s in z.sems">
-                        <h6 class="">Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }} <span
-                                style="float:right">GPA
-                                : {{ s.semesterGPA | number : 2 }}</span>
+                        <h6 class="">Credits : {{ s.semesterCredit }} / {{ s.totalSemesterCredit }}
+                            <span style="float:right">GPA: {{ s.semesterGPA | number : 2 }}</span>
                         </h6>
                         <div class="row subRow" ng-repeat="x in s.subs" title="Subject {{$index+1}} : {{ x.name }}">
                             <div class="col s4 m3">
-                                {{ x.id.substr(0,9) }}<b>{{ x.id.substr(-1) }}</b><br>
+                                <span>{{ x.id.substr(0,9) }}<b>{{ x.id.substr(-1) }}</b></span><br>
                                 <span ng-if="x.type" ng-class="x.type" class="badge left white-text">
                                     {{ x.type | getType }}
                                 </span>
@@ -178,13 +177,13 @@
                             <div class="col s12 m3 input-field">
                                 <select class="browser-default" ng-class="x.grade | getGradeClass" ng-model="x.grade"
                                     ng-change="updateGPA()" ng-options="y.val as y.name for y in grades">
+                                    <option>-
+                                    <option>
                                 </select>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
 
@@ -195,8 +194,9 @@
             <div class="container">
                 GPA Calculator - {{ courseTitle }}
                 <a class="grey-text text-lighten-4 right" target="_blank"
-                    href="https://github.com/nuwan94/se-gpa-calculator"><span class="red-text">❤</span>
-                    GitHub</a>
+                    href="https://github.com/nuwan94/se-gpa-calculator">
+                    <span class="red-text">❤</span>
+                    FOSS</a>
                 <br /> <a href="https://nuwan.dev" target="_blank">Nuwan94</a> © 2018
             </div>
         </div>
