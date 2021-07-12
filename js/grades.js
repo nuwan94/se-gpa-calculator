@@ -44,11 +44,7 @@ var gradeValues = [
         val: 1.0
     },
     {
-        name: "D-",
-        val: 0.7
-    },
-    {
         name: "E",
-        val: 0.3
+        val: 0.0
     }
 ];
