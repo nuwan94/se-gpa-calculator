@@ -80,49 +80,55 @@
         <li><a class="subheader">Grades</a></li>
         <li>
           <table class="centered striped">
-            <tr>
-              <td class="light-green accent-3">A+</td>
-              <td class="light-green accent-2">A</td>
-              <td class="cyan accent-3">A-</td>
-              <td class="cyan accent-3">B+</td>
-              <td class="cyan accent-3">B</td>
-              <td class="amber lighten-2">B-</td>
-              <td class="amber lighten-2">C+</td>
-              <td class="amber lighten-2">C</td>
+            <tr class="blue white-text">
+              <td>A+</td>
+              <td>A</td>
+              <td>A-</td>
+              <td>B+</td>
+              <td>B</td>
             </tr>
             <tr>
-              <td class="light-green accent-3">
-                {{results.get(4.0000000001).count || '0'}}
-              </td>
-              <td class="light-green accent-2">
-                {{results.get(4.0).count || '0'}}
-              </td>
-              <td class="cyan accent-3">{{results.get(3.7).count || '0'}}</td>
-              <td class="cyan accent-3">{{results.get(3.3).count || '0'}}</td>
-              <td class="cyan accent-3">{{results.get(3.0).count || '0'}}</td>
-              <td class="amber lighten-2">{{results.get(2.7).count || '0'}}</td>
-              <td class="amber lighten-2">{{results.get(2.3).count || '0'}}</td>
-              <td class="amber lighten-2">{{results.get(2.0).count || '0'}}</td>
+              <td>{{results.get(4.0000000001).count || '0'}}</td>
+              <td>{{results.get(4.0).count || '0'}}</td>
+              <td>{{results.get(3.7).count || '0'}}</td>
+              <td>{{results.get(3.3).count || '0'}}</td>
+              <td>{{results.get(3.0).count || '0'}}</td>
             </tr>
             <tr>
-              <td class="light-green accent-3">
-                {{results.get(4.0000000001).credits || '0'}}
-              </td>
-              <td class="light-green accent-2">
-                {{results.get(4.0).credits || '0'}}
-              </td>
-              <td class="cyan accent-3">{{results.get(3.7).credits || '0'}}</td>
-              <td class="cyan accent-3">{{results.get(3.3).credits || '0'}}</td>
-              <td class="cyan accent-3">{{results.get(3.0).credits || '0'}}</td>
-              <td class="amber lighten-2">
-                {{results.get(2.7).credits || '0'}}
-              </td>
-              <td class="amber lighten-2">
-                {{results.get(2.3).credits || '0'}}
-              </td>
-              <td class="amber lighten-2">
-                {{results.get(2.0).credits || '0'}}
-              </td>
+              <td>{{results.get(4.0000000001).credits || '0'}}</td>
+              <td>{{results.get(4.0).credits || '0'}}</td>
+              <td>{{results.get(3.7).credits || '0'}}</td>
+              <td>{{results.get(3.3).credits || '0'}}</td>
+              <td>{{results.get(3.0).credits || '0'}}</td>
+            </tr>
+          </table>
+          <table class="centered striped">
+            <tr class="blue white-text">
+              <td>B-</td>
+              <td>C+</td>
+              <td>C</td>
+              <td>C-</td>
+              <td>D+</td>
+              <td>D</td>
+              <td>E</td>
+            </tr>
+            <tr>
+              <td>{{results.get(2.7).count || '0'}}</td>
+              <td>{{results.get(2.3).count || '0'}}</td>
+              <td>{{results.get(2.0).count || '0'}}</td>
+              <td>{{results.get(1.7).count || '0'}}</td>
+              <td>{{results.get(1.3).count || '0'}}</td>
+              <td>{{results.get(1.0).count || '0'}}</td>
+              <td>{{results.get(0.0).count || '0'}}</td>
+            </tr>
+            <tr>
+              <td>{{results.get(2.7).credits || '0'}}</td>
+              <td>{{results.get(2.3).credits || '0'}}</td>
+              <td>{{results.get(2.0).credits || '0'}}</td>
+              <td>{{results.get(1.7).credits || '0'}}</td>
+              <td>{{results.get(1.3).credits || '0'}}</td>
+              <td>{{results.get(1.0).credits || '0'}}</td>
+              <td>{{results.get(0.0).credits || '0'}}</td>
             </tr>
           </table>
         </li>
@@ -308,104 +314,63 @@
                     <i class="material-icons">arrow_drop_down</i>Summary
                   </div>
                   <div class="collapsible-body">
-                    <h6>Results and Credits Distribution</h6>
-                    <table class="centered">
-                      <tr title="Grade">
-                        <td class="light-green accent-3">A+</td>
-                        <td class="light-green accent-2">A</td>
-                        <td class="cyan accent-3">A-</td>
-                        <td class="cyan accent-3">B+</td>
-                        <td class="cyan accent-3">B</td>
-                        <td class="amber lighten-2">B-</td>
-                        <td class="amber lighten-2">C+</td>
-                        <td class="amber lighten-2">C</td>
-                        <td class="">C-</td>
-                        <td class="">D+</td>
-                        <td class="">D</td>
-                        <td class="">E</td>
-                      </tr>
-                      <tr title="Number of Subjects">
-                        <td class="light-green accent-3">
-                          {{z.yearSummary.get(4.0000000001).count || '0'}}
-                        </td>
-                        <td class="light-green accent-2">
-                          {{z.yearSummary.get(4.0).count || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.7).count || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.3).count || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.0).count || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.7).count || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.3).count || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.0).count || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.7).count || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.3).count || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.0).count || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(0.0).count || '0'}}
-                        </td>
-                      </tr>
-
-                      <tr title="Number of Credits">
-                        <td class="light-green accent-3">
-                          {{z.yearSummary.get(4.0000000001).credits || '0'}}
-                        </td>
-                        <td class="light-green accent-2">
-                          {{z.yearSummary.get(4.0).credits || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.7).credits || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.3).credits || '0'}}
-                        </td>
-                        <td class="cyan accent-3">
-                          {{z.yearSummary.get(3.0).credits || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.7).credits || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.3).credits || '0'}}
-                        </td>
-                        <td class="amber lighten-2">
-                          {{z.yearSummary.get(2.0).credits || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.7).credits || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.3).credits || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(1.0).credits || '0'}}
-                        </td>
-                        <td class="">
-                          {{z.yearSummary.get(0.0).credits || '0'}}
-                        </td>
-                      </tr>
-                    </table>
-                    <h6>Credit Table</h6>
-
                     <div class="row">
-                      <div class="col s12 xl4 push-xl4">
+
+                      <div class="col s12 xl8">
+                        <h6>Results and Credits Distribution</h6>
+                        <table class="centered">
+                          <tr class="blue white-text" title="Grade">
+                            <td>A+</td>
+                            <td>A</td>
+                            <td>A-</td>
+                            <td>B+</td>
+                            <td>B</td>
+                            <td>B-</td>
+                            <td>C+</td>
+                            <td>C</td>
+                            <td>C-</td>
+                            <td>D+</td>
+                            <td>D</td>
+                            <td>E</td>
+                          </tr>
+                          <tr title="Number of Subjects">
+                            <td>
+                              {{z.yearSummary.get(4.0000000001).count || '0'}}
+                            </td>
+                            <td>{{z.yearSummary.get(4.0).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.7).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.3).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.0).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.7).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.3).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.0).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.7).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.3).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.0).count || '0'}}</td>
+                            <td>{{z.yearSummary.get(0.0).count || '0'}}</td>
+                          </tr>
+
+                          <tr title="Number of Credits">
+                            <td>
+                              {{z.yearSummary.get(4.0000000001).credits || '0'}}
+                            </td>
+                            <td>{{z.yearSummary.get(4.0).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.7).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.3).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(3.0).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.7).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.3).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(2.0).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.7).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.3).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(1.0).credits || '0'}}</td>
+                            <td>{{z.yearSummary.get(0.0).credits || '0'}}</td>
+                          </tr>
+                        </table>
+                      </div>
+
+                      <div class="col s12 xl4">
+                        <h6>Credit Table</h6>
                         <ul class="collection">
                           <li class="collection-item">
                             <div>
@@ -453,6 +418,7 @@
                           </li>
                         </ul>
                       </div>
+
                     </div>
                   </div>
                 </li>

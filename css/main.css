@@ -2,7 +2,6 @@ html {
     font-size: 14px;
 }
 
-
 body {
     font-family: 'Roboto', sans-serif;
     cursor: default;
@@ -25,7 +24,7 @@ body {
     padding: .5em;
 }
 
-.nav-wrapper .adjust-btn{
+.nav-wrapper .adjust-btn {
     margin-top: -0.5em !important;
     height: 100% !important;
     width: 5em;
@@ -42,7 +41,6 @@ body {
 
 .subjectTab {
     margin-top: 2em;
-
 }
 
 .subjectTab .row {
@@ -55,16 +53,24 @@ body {
     background: #eee;
 }
 
-.subjectTab h5,
-.subjectTab h6 {
+.subjectTab h5, .subjectTab h6 {
     margin: 0;
     padding: .75em;
     background: #263238;
     color: #fff;
 }
 
-.sidenav li p{
+.sidenav li p {
     line-height: 1.5em;
+}
+
+.sidenav table {
+    table-layout: fixed;
+}
+
+.sidenav table td {
+    padding: 0;
+    border: 1px solid #ddd;
 }
 
 /* .subRow {    
@@ -81,7 +87,7 @@ body {
     text-align: center;
 } */
 
-.input-field{
+.input-field {
     margin: 0;
 }
 
@@ -90,11 +96,11 @@ select {
     text-align: center;
 }
 
-.dropdown-content li > a, .dropdown-content li > span {
+.dropdown-content li>a, .dropdown-content li>span {
     color: #111;
 }
 
-.select-wrapper input.select-dropdown, .select-wrapper input.select-dropdown:focus{
+.select-wrapper input.select-dropdown, .select-wrapper input.select-dropdown:focus {
     border-bottom: none;
 }
 
@@ -154,7 +160,6 @@ select {
 
 .semContent {
     margin-bottom: 1em;
-
 }
 
 .semContent .badge {
@@ -194,11 +199,9 @@ main {
     .container {
         width: 100%;
     }
-
     .row .col {
         padding: 0.1em .5em;
     }
-
 }
 
 @media screen and (min-width: 700px) {
@@ -207,18 +210,12 @@ main {
         background: #fff;
         box-shadow: 0 0 10px #ddd;
     }
-
     .tab a {
         border-radius: 0 0 10px 10px;
     }
-
     body {
         background: #eee;
     }
-
 }
 
-@media screen and (min-width: 1200px) {
-    
-}
-
+@media screen and (min-width: 1200px) {}
