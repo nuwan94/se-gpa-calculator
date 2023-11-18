@@ -79,8 +79,8 @@ var courseUnits = [{
             name: 'Management for Software Engineering II',
             id: 'SENG 21272'
         }, {
-            name: 'Computer Networks',
-            id: 'SENG 24213'
+            id: "SENG 31252",
+            name: "Professional Practices"
         }, {
             name: 'Interactive Application Development',
             id: 'SENG 21263',
@@ -101,6 +101,9 @@ var courseUnits = [{
         }, {
             name: 'Mobile Application Development',
             id: 'SENG 22243'
+        }, {
+            name: 'Computer Networks',
+            id: 'SENG 24213'
         }, {
             name: 'Embedded Systems Development',
             id: 'SENG 22253',
@@ -129,9 +132,6 @@ var courseUnits = [{
         }, {
             id: "SENG 31242",
             name: "System Design Project"
-        }, {
-            id: "SENG 31252",
-            name: "Professional Practices"
         }, {
             id: "SENG 31262",
             name: "Research Methods"
