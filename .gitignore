@@ -4,4 +4,6 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-package.json
+node_modules
+dist
+*.local
