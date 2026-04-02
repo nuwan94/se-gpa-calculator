@@ -14,7 +14,7 @@
             { "id": "SENG 11223", "name": "Programming Concepts", "credits": 3 },
             { "id": "SENG 11232", "name": "Engineering Foundation", "credits": 2 },
             { "id": "SENG 11243", "name": "Statistics", "credits": 3 },
-            { "id": "PMAT 11212", "name": "Discreet Mathematics for Computing I A", "credits": 2 },
+            { "id": "PMAT 11212", "name": "Discrete Mathematics for Computing I A", "credits": 2 },
             { "id": "DELT 11212", "name": "English for Professionals", "credits": 2 }
           ]
         },
@@ -26,7 +26,7 @@
             { "id": "SENG 12223", "name": "Database Design and Development", "credits": 3 },
             { "id": "SENG 12233", "name": "Object Oriented Programming", "credits": 3 },
             { "id": "SENG 12242", "name": "Management for Software Engineering I", "credits": 2 },
-            { "id": "PMAT 12212", "name": "Discreet Mathematics for Computing Ii B", "credits": 2 },
+            { "id": "PMAT 12212", "name": "Discrete Mathematics for Computing II B", "credits": 2 },
             { "id": "DELT 12312", "name": "Communication Skills for Professionals", "credits": 2 }
           ]
         }
