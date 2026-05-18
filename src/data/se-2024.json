@@ -1,0 +1,456 @@
+{
+  "id": "se-2024",
+  "name": "Software Engineering - University of Kelaniya",
+  "years": [
+    {
+      "id": "year-1",
+      "label": "Year 1",
+      "semesters": [
+        {
+          "id": "sem-1",
+          "label": "Semester 1",
+          "subjects": [
+            {
+              "id": "SENG 11213",
+              "name": "Fundamentals of Computing",
+              "credits": 3
+            },
+            {
+              "id": "SENG 11223",
+              "name": "Programming Concepts",
+              "credits": 3
+            },
+            {
+              "id": "SENG 11232",
+              "name": "Engineering Foundation",
+              "credits": 2
+            },
+            {
+              "id": "SENG 11243",
+              "name": "Statistics",
+              "credits": 3
+            },
+            {
+              "id": "PMAT 11212",
+              "name": "Discrete Mathematics for Computing I A",
+              "credits": 2
+            },
+            {
+              "id": "DELT 11232",
+              "name": "English for Professionals",
+              "credits": 2
+            }
+          ]
+        },
+        {
+          "id": "sem-2",
+          "label": "Semester 2",
+          "subjects": [
+            {
+              "id": "SENG 12213",
+              "name": "Data Structures and Algorithms",
+              "credits": 3
+            },
+            {
+              "id": "SENG 12223",
+              "name": "Database Design and Development",
+              "credits": 3
+            },
+            {
+              "id": "SENG 12233",
+              "name": "Object Oriented Programming",
+              "credits": 3
+            },
+            {
+              "id": "SENG 12242",
+              "name": "Management for Software Engineering I",
+              "credits": 2
+            },
+            {
+              "id": "PMAT 12212",
+              "name": "Discrete Mathematics for Computing II B",
+              "credits": 2
+            },
+            {
+              "id": "DELT 12282",
+              "name": "Communication Skills for Professionals",
+              "credits": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year-2",
+      "label": "Year 2",
+      "semesters": [
+        {
+          "id": "sem-3",
+          "label": "Semester 3",
+          "subjects": [
+            {
+              "id": "SENG 21213",
+              "name": "Computer Architecture and Operating Systems",
+              "credits": 3
+            },
+            {
+              "id": "SENG 21222",
+              "name": "Software Constructions",
+              "credits": 2
+            },
+            {
+              "id": "SENG 21233",
+              "name": "Requirement Engineering",
+              "credits": 3
+            },
+            {
+              "id": "SENG 21243",
+              "name": "Software Modelling",
+              "credits": 3
+            },
+            {
+              "id": "SENG 21253",
+              "name": "Web Application Development",
+              "credits": 3
+            },
+            {
+              "id": "SENG 31252",
+              "name": "Professional Practices",
+              "credits": 2
+            },
+            {
+              "id": "SENG 21263",
+              "name": "Interactive Application Development",
+              "credits": 3,
+              "type": "o"
+            }
+          ]
+        },
+        {
+          "id": "sem-4",
+          "label": "Semester 4",
+          "subjects": [
+            {
+              "id": "SENG 22212",
+              "name": "Software Architecture and Design",
+              "credits": 2
+            },
+            {
+              "id": "SENG 22223",
+              "name": "Human Computer Interaction",
+              "credits": 3
+            },
+            {
+              "id": "SENG 22233",
+              "name": "Software Verification and Validation",
+              "credits": 3
+            },
+            {
+              "id": "SENG 22243",
+              "name": "Mobile Application Development",
+              "credits": 3
+            },
+            {
+              "id": "SENG 24213",
+              "name": "Computer Networks",
+              "credits": 3
+            },
+            {
+              "id": "SENG 24272",
+              "name": "Management for Software Engineering II",
+              "credits": 2
+            },
+            {
+              "id": "SENG 22253",
+              "name": "Embedded Systems Development",
+              "credits": 3,
+              "type": "o"
+            },
+            {
+              "id": "PMAT 22213",
+              "name": "Mathematical Methods",
+              "credits": 3,
+              "type": "o"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year-3",
+      "label": "Year 3",
+      "semesters": [
+        {
+          "id": "sem-5",
+          "label": "Semester 5",
+          "subjects": [
+            {
+              "id": "SENG 31212",
+              "name": "Software Quality",
+              "credits": 2
+            },
+            {
+              "id": "SENG 31222",
+              "name": "Information Security",
+              "credits": 2
+            },
+            {
+              "id": "SENG 31232",
+              "name": "Software Project Management",
+              "credits": 2
+            },
+            {
+              "id": "SENG 31242",
+              "name": "System Design Project",
+              "credits": 2
+            },
+            {
+              "id": "SENG 31282",
+              "name": "Computer Network Management",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 31272",
+              "name": "Internet of Things",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 31292",
+              "name": "Enterprise Information Systems",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 31313",
+              "name": "Advanced Web Applications Development",
+              "credits": 3,
+              "type": "n"
+            },
+            {
+              "id": "SENG 31323",
+              "name": "Mobile Computing Technologies",
+              "credits": 3,
+              "type": "m"
+            },
+            {
+              "id": "SENG 31333",
+              "name": "Business Intelligence and Management Support Systems",
+              "credits": 3,
+              "type": "d"
+            },
+            {
+              "id": "SENG 31343",
+              "name": "Health Information Management",
+              "credits": 3,
+              "type": "h"
+            },
+            {
+              "id": "SENG 31353",
+              "name": "Game Development Technology",
+              "credits": 3,
+              "type": "g"
+            },
+            {
+              "id": "SENG 31363",
+              "name": "Business Systems Modelling and Optimization",
+              "credits": 3,
+              "type": "b"
+            },
+            {
+              "id": "SENG 34262",
+              "name": "Research Methods",
+              "credits": 2
+            }
+          ]
+        },
+        {
+          "id": "sem-6",
+          "label": "Semester 6",
+          "subjects": [
+            {
+              "id": "SENG 34222",
+              "name": "Software Process",
+              "credits": 2
+            },
+            {
+              "id": "SENG 34213",
+              "name": "Systems Development Project",
+              "credits": 3
+            },
+            {
+              "id": "SENG 32216",
+              "name": "Internship",
+              "credits": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year-4",
+      "label": "Year 4",
+      "semesters": [
+        {
+          "id": "sem-7",
+          "label": "Semester 7",
+          "subjects": [
+            {
+              "id": "SENG 41212",
+              "name": "Software Evolution",
+              "credits": 2
+            },
+            {
+              "id": "SENG 41222",
+              "name": "Software Metrics and Measurements",
+              "credits": 2
+            },
+            {
+              "id": "SENG 41233",
+              "name": "Digital Image Processing",
+              "credits": 3,
+              "type": "o"
+            },
+            {
+              "id": "SENG 41242",
+              "name": "Advanced Databases",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 41252",
+              "name": "Advanced Computer Networks",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 41262",
+              "name": "Speech Interfaces",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 41272",
+              "name": "Formal Methods",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 41283",
+              "name": "Distributed and Cloud Computing",
+              "credits": 3,
+              "type": "n"
+            },
+            {
+              "id": "SENG 41293",
+              "name": "Mobile Web Application Development",
+              "credits": 3,
+              "type": "m"
+            },
+            {
+              "id": "SENG 41303",
+              "name": "Big Data Infrastructure",
+              "credits": 3,
+              "type": "d"
+            },
+            {
+              "id": "SENG 41313",
+              "name": "Health Information Systems Design and Development",
+              "credits": 3,
+              "type": "h"
+            },
+            {
+              "id": "SENG 41323",
+              "name": "Games Design, Artwork, and Programming",
+              "credits": 3,
+              "type": "g"
+            },
+            {
+              "id": "SENG 41333",
+              "name": "Computer Based Operations Management",
+              "credits": 3,
+              "type": "b"
+            }
+          ]
+        },
+        {
+          "id": "sem-8",
+          "label": "Semester 8",
+          "subjects": [
+            {
+              "id": "SENG 44212",
+              "name": "Software Safety and Reliability",
+              "credits": 2
+            },
+            {
+              "id": "SENG 43216",
+              "name": "Software Engineering Research Project",
+              "credits": 6
+            },
+            {
+              "id": "SENG 44222",
+              "name": "Usability Engineering",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 44232",
+              "name": "Software Management",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 44242",
+              "name": "Machine Learning",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 44252",
+              "name": "Computer Graphics",
+              "credits": 2,
+              "type": "o"
+            },
+            {
+              "id": "SENG 42273",
+              "name": "Semantic Web and Ontological Engineering",
+              "credits": 3,
+              "type": "n"
+            },
+            {
+              "id": "SENG 42283",
+              "name": "Mobile Networks",
+              "credits": 3,
+              "type": "m"
+            },
+            {
+              "id": "SENG 42293",
+              "name": "Big Data Analytics",
+              "credits": 3,
+              "type": "d"
+            },
+            {
+              "id": "SENG 42303",
+              "name": "Medical Imaging and Biomedical Signal Processing",
+              "credits": 3,
+              "type": "h"
+            },
+            {
+              "id": "SENG 42313",
+              "name": "Advanced Topics in Game Design and Animation",
+              "credits": 3,
+              "type": "g"
+            },
+            {
+              "id": "SENG 42323",
+              "name": "Business Process Engineering",
+              "credits": 3,
+              "type": "b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

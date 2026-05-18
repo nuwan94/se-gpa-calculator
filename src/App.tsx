@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import courseData from "./data/se-2015.json";
+import courseData from "./data/se-2024.json";
 import type { CourseConfig, GradeName } from "./types";
 import { calculateOverallStats } from "./lib/gpa";
 import { exportGrades, importGrades } from "./lib/storage";
