@@ -12,7 +12,7 @@ import type {
 } from "../types";
 
 export const GRADE_OPTIONS: GradeOption[] = [
-  { name: "A+", value: 4.3 },
+  { name: "A+", value: 4.0 },
   { name: "A", value: 4.0 },
   { name: "A-", value: 3.7 },
   { name: "B+", value: 3.3 },
@@ -189,8 +189,7 @@ export function getEligibility(gpa: number | null): Eligibility {
 
 export function gradeColorClass(grade: GradeName): string {
   const value = GRADE_VALUE_MAP[grade];
-  if (value >= 4.3) return "bg-green-400 text-white";
-  if (value >= 4.0) return "bg-green-300 text-white";
+  if (value >= 4.0) return "bg-green-400 text-white";
   if (value >= 3.0) return "bg-cyan-400 text-white";
   if (value >= 2.0) return "bg-amber-300 text-gray-800";
   return "bg-lime-200 text-gray-800";
